@@ -240,3 +240,9 @@ else:
   if pow(a,2)<pow(b,2)+pow(c,2):print('TRIANGULO ACUTANGULO')
   if a==b==c:print('TRIANGULO EQUILATERO')
   if a==b!=c or a==c!=b or b==c!=a:print('TRIANGULO ISOSCELES')
+
+# Problem #1046
+s,e=[int(i) for i in input().split()]
+if s<e:print('O JOGO DUROU {} HORA(S)'.format(e-s))
+if s>e:print('O JOGO DUROU {} HORA(S)'.format(24-(s-e)))
+if s==e:print('O JOGO DUROU 24 HORA(S)')
