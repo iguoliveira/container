@@ -1,0 +1,9 @@
+header h1{
+    background: linear-gradient(90deg, rgba(255,255,255) 30%, rgba(255,76,206) 50%, rgba(255,255,255) 70%);
+    text-align: center;
+}
+.container{padding-left: 33%;}
+form{display: table;}
+p{display: table-row;}
+label,input{display: table-cell;}
+button{padding: 5px; background-color: pink; border-color: white;}
