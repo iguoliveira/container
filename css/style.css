@@ -1,0 +1,171 @@
+:root {
+  --backgroundColor: #353335;
+  --shadow: #4d4a4d;
+  --brightColor: #8f8f8f;
+  --sizeDefined: 16px;
+  --animation1Color: #59d979;
+  --animation2Color: #608edb;
+  --animation3Color: #e3b476;
+  --animation4Color: #c25955;
+}
+
+body {background-color: var(--backgroundColor);}
+
+body, div, input, button {font-size: var(--sizeDefined);}
+
+.headerSegment {
+  color: var(--brightColor);
+  text-shadow: 2px 2px 2px var(--shadow);
+  margin-top: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+form{
+  width: 380px;
+  margin: auto;
+}
+
+input{
+  border: 0;
+  outline: 0;
+  font-size: var(--sizeDefined);
+  padding: var(--sizeDefined);
+  background-color: var(--backgroundColor);
+  box-shadow: inset 0px 1px 2.5px var(--shadow), inset 0px -10px 1px var(--brightColor);
+  width: 100%;
+  transition: 0.5s ease-in-out;
+  text-align: center;
+  font-weight: 600;
+  color: var(--brightColor);
+  border-radius: 25px;
+}
+
+input:focus {box-shadow: inset 2px 2px 5px var(--shadow);}
+
+.resultInput {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  box-shadow: inset 2px 2px 5px var(--shadow);
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--brightColor);
+  text-transform: uppercase;
+  padding: 10px 10px;
+  background-color: var(--backgroundColor);
+}
+
+.subtractButton {width: 315px;}
+
+.fourthP {margin-top: 25px;}
+
+form div {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-left: 32px;
+}
+
+div span {
+  position: absolute;
+  display: block;
+}
+
+div span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  animation: btn-anim1 1.25s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {left: -100%;}
+  50%,100% {left: 100%;}
+}
+
+div span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  animation: btn-anim2 1.25s linear infinite;
+  animation-delay: 0.3125s
+}
+
+@keyframes btn-anim2 {
+  0% {top: -100%;}
+  50%,100% {top: 100%;}
+}
+
+div span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  animation: btn-anim3 1.25s linear infinite;
+  animation-delay: 0.625s
+}
+
+@keyframes btn-anim3 {
+  0% {right: -100%;}
+  50%,100% {right: 100%;}
+}
+
+div span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  animation: btn-anim4 1.25s linear infinite;
+  animation-delay: 0.9375s
+}
+
+@keyframes btn-anim4 {
+  0% {bottom: -100%;}
+  50%,100% {bottom: 100%;}
+}
+
+.firstP:hover, .sumButton:hover {
+  background: var(--animation1Color);
+  color: #fff;
+  box-shadow: 0 0 5px var(--animation1Color), 0 0 25px var(--animation1Color), 0 0 50px var(--animation1Color);
+}
+
+.secondP:hover, .multiplyButton:hover {
+  background: var(--animation2Color);
+  color: #fff;
+  box-shadow: 0 0 5px var(--animation2Color), 0 0 25px var(--animation2Color), 0 0 50px var(--animation2Color);
+}
+
+.thirdP:hover, .divideButton:hover {
+  background: var(--animation3Color);
+  color: #fff;
+  box-shadow: 0 0 5px var(--animation3Color), 0 0 25px var(--animation3Color), 0 0 50px var(--animation3Color);
+}
+
+.fourthP:hover, .subtractButton:hover {
+  background: var(--animation4Color);
+  color: #fff;
+  box-shadow: 0 0 5px var(--animation4Color), 0 0 25px var(--animation4Color), 0 0 50px var(--animation4Color);
+}
+
+div span.animation1 {background: linear-gradient(360deg, transparent, var(--animation1Color));}
+
+div span.animation2 {background: linear-gradient(360deg, transparent, var(--animation2Color));}
+
+div span.animation3 {background: linear-gradient(360deg, transparent, var(--animation3Color));}
+
+div span.animation4 {background: linear-gradient(360deg, transparent, var(--animation4Color));}

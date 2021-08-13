@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Imersao Alura - Aula 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1 class="headerSegment">Calculator</h1>
+        </div>
+    </header>
+
+    <section>
+        <div class="calculator">
+            <form method="post">
+                <label for="value1">
+                    <input type="text" name="value1" id="value1" placeholder="Value 1" value="">
+                </label>
+
+                <label for="value2">
+                    <input type="text" name="value2" id="value2" placeholder="Value 2" value="">
+                </label>
+
+                <label for="resultCalculus">
+                    <input class="resultInput" type="text" name="resultCalculus" id="resultCalculus" placeholder="Outcome" value="" disabled>
+                </label>
+
+                <div class="secondP">
+                    <span class="animation2"></span>
+                    <span class="animation2"></span>
+                    <span class="animation2"></span>
+                    <span class="animation2"></span>
+                    <button onclick="multiplyValues()" id="calculate" class="multiplyButton">Multiply</button>
+                </div>
+
+                <div class="firstP">
+                    <span class="animation1"></span>
+                    <span class="animation1"></span>
+                    <span class="animation1"></span>
+                    <span class="animation1"></span>
+                    <button onclick="sumValues()" id="calculate" class="sumButton">Sum</button>
+                </div>
+
+                <div class="thirdP">
+                    <span class="animation3"></span>
+                    <span class="animation3"></span>
+                    <span class="animation3"></span>
+                    <span class="animation3"></span>
+                    <button onclick="divideValues()" id="calculate" class="divideButton">Division</button>
+                </div>
+
+                <div class="fourthP">
+                    <span class="animation4"></span>
+                    <span class="animation4"></span>
+                    <span class="animation4"></span>
+                    <span class="animation4"></span>
+                    <button onclick="subtractValues()" id="calculate" class="subtractButton">Subtraction</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
