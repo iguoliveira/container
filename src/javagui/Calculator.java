@@ -1,16 +1,21 @@
 package javagui;
 
+import util.UtilFunc;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class Calculator{
+public class Calculator extends UtilFunc {
+    DecimalFormat df = new DecimalFormat("#");
+
     JFrame frame;
     JPanel buttons;
     JPanel display;
     JTextArea text;
+    JTextArea secNumber;
 
     ArrayList<JButton> values = new ArrayList<>();
     ArrayList<String> chars = new ArrayList<>();
@@ -29,7 +34,10 @@ public class Calculator{
         display.setBackground(Color.white);
 
         text = new JTextArea();
-        display.add(text);
+        secNumber = new JTextArea();
+
+        display.add(BorderLayout.NORTH, secNumber);
+        display.add(BorderLayout.CENTER, text);
 
         buttons = new JPanel();
         buttons.setBackground(Color.darkGray);
@@ -127,18 +135,30 @@ public class Calculator{
 
                             else if(values.indexOf(values.get(x)) >= 12 && values.indexOf(values.get(x)) <= 15){
                                 firstNumber = Double.parseDouble(text.getText());
+                                if(numIsInt(firstNumber)){
+                                    secNumber.setText(""+df.format(firstNumber));
+                                }else{
+                                    secNumber.setText(""+firstNumber);
+                                }
                                 text.setText("");
                                 String stringToChar = chars.get(x);
                                 operation = stringToChar.charAt(0);
+                                secNumber.append(" " + operation);
                             }
 
                             else if(values.indexOf(values.get(x)) == 16){
                                 text.setText("");
+                                secNumber.setText("");
                             }
 
                             else if(values.indexOf(values.get(x)) == 17){
                                 secondNumber = Double.parseDouble(text.getText());
-
+                                if(numIsInt(secondNumber)){
+                                    secNumber.append(" " + df.format(secondNumber));
+                                }else{
+                                    secNumber.append(" " +secondNumber);
+                                }
+                                text.setText("");
                                 switch (operation){
                                     case'÷':
                                         result = firstNumber / secondNumber;
@@ -153,7 +173,11 @@ public class Calculator{
                                         result = firstNumber + secondNumber;
                                         break;
                                 }
-                                text.setText(""+result);
+                                if(numIsInt(result)){
+                                    text.setText(""+df.format(result));
+                                }else{
+                                    text.setText(""+result);
+                                }
                             }
                         }
                     }
