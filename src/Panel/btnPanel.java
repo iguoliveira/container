@@ -14,21 +14,20 @@ public class btnPanel extends JPanel {
     Calculations calcMet = new Calculations();
     JPanel panel;
     ArrayList<JButton> buttons = new ArrayList<>();
-    String[] namesForms = {"Quadrado", "Circulo", "Retangulo", "Triangulo", "Cone", "Hexagono", "Piramide", "Paralele", "Losangulo", "Cubo", "Esfera"};
+    String[] namesForms = {"□", "○", "△", "⬡", "▭", "◨", "◑", "◁", "◮", "◎", "▱"};
 
     public btnPanel(){
         panel = new JPanel();
         panel.setPreferredSize(new Dimension());
         panel.setLayout(new GridLayout(4,4,10,10));
+        panel.setBackground(new Color(0x000000));
 
-        for(int i = 0; i < 12; i++){
-            if(i == 11){
-                buttons.add(new JButton("Sair"));
-                panel.add(buttons.get(i));
-            }else{
-                buttons.add(new JButton(namesForms[i]));
-                panel.add(buttons.get(i));
-            }
+        for(int i = 0; i < 11; i++){
+            buttons.add(new JButton(namesForms[i]));
+            buttons.get(i).setBackground(new Color(0xe03f3f));
+            buttons.get(i).setBorder(BorderFactory.createEmptyBorder());
+            buttons.get(i).setFocusable(false);
+            panel.add(buttons.get(i));
         }
 
         for(int i = 0; i < buttons.toArray().length; i++){
@@ -38,8 +37,6 @@ public class btnPanel extends JPanel {
                 JTextField inputArea;
                 JTextField inputPerim;
                 JLabel titulo;
-                JCheckBox area;
-                JCheckBox perim;
                 JButton calculate;
                 JTextArea result;
 
@@ -49,38 +46,36 @@ public class btnPanel extends JPanel {
 
                         if(e.getSource() == buttons.get(x)){
 
-                            if(buttons.indexOf(buttons.get(x)) == 0){
-                                frameCalc = new JFrame();
-                                it.newFrameAttributes(frameCalc);
+                            for(int j = 0; j < buttons.toArray().length; j++){
 
-                                calc = new JPanel();
-                                it.newPanelAttributes(calc);
+                                if(buttons.indexOf(buttons.get(x)) == j){
+                                    frameCalc = new JFrame();
+                                    it.newFrameAttributes(frameCalc);
 
-                                titulo = new JLabel("Valores", SwingConstants.CENTER);
-                                it.newLabelAttributes(titulo);
+                                    calc = new JPanel();
+                                    it.newPanelAttributes(calc);
 
-                                inputArea = new JTextField();
-                                it.newTextfieldAttributes(inputArea);
+                                    titulo = new JLabel("Valores", SwingConstants.CENTER);
+                                    it.newLabelAttributes(titulo);
 
-                                inputPerim = new JTextField();
-                                it.newTextfieldAttributes(inputPerim);
+                                    inputArea = new JTextField();
+                                    it.newTextfieldAttributes(inputArea);
 
-                                area = new JCheckBox("Area");
-                                it.newCheckboxAttributes(area);
+                                    inputPerim = new JTextField();
+                                    it.newTextfieldAttributes(inputPerim);
 
-                                perim = new JCheckBox("Perimetro");
-                                it.newCheckboxAttributes(perim);
+                                    calculate = new JButton("Do it");
+                                    it.newButtonAttributes(calculate);
 
-                                calculate = new JButton("Do it");
-                                it.newButtonAttributes(calculate);
+                                    result = new JTextArea();
+                                    it.newTextareaAttributes(result);
 
-                                result = new JTextArea();
-                                it.newTextareaAttributes(result);
+                                    it.addItems(frameCalc, calc, titulo, inputArea, inputPerim, calculate, result);
 
-                                it.addItems(frameCalc, calc, titulo, inputArea, inputPerim, area, perim, calculate, result);
+                                    it.eventButton(j, calculate, inputArea, inputPerim, result);
 
-                                it.eventButton(calculate, inputArea, inputPerim, result);
-                                frameCalc.setVisible(true);
+                                    frameCalc.setVisible(true);
+                                }
                             }
                         }
                     }
