@@ -12,6 +12,7 @@ public class btnFrame extends JFrame {
         frame.setSize(350,300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
+        frame.setLocation(800,380);
         panel.addToFrame(frame);
 
         frame.setVisible(true);
