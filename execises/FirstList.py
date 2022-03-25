@@ -1,4 +1,4 @@
 class FirstList:
     def exercise01(self):
-        nome = input("Nome: ")
+        nome = "LINDOMAR"
         return f"Nome em maiusculo: {nome.upper()}"
