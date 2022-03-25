@@ -1,4 +1,4 @@
-from ExecutionEvents import *
+from events.ExecutionEvents import ExecutionEvents as e
 
 class Main:
-    e = ExecutionEvents()
+    e
