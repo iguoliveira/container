@@ -1,5 +1,5 @@
-from MainWindow import MainWindow as m
-from ButtonWindow import ButtonWindow as b
+from windows.MainWindow import MainWindow as m
+from windows.ButtonWindow import ButtonWindow as b
 from PySimpleGUI import PySimpleGUI as g
 from execises.FirstList import FirstList as f
 
@@ -17,7 +17,7 @@ class ExecutionEvents:
             wInitial.extend_layout(wInitial['container'], [[g.Button('Exercicio {}'.format(count))]])
 
         elif window == wInitial and event == "Exercicio 1":
-            wExerc = b.buttonWindow(""+f.exercise01(0))
+            wExerc = b.buttonWindow(0,f.exercise01(0))
             wInitial.hide()
 
         elif window == wExerc and event == "Back":
