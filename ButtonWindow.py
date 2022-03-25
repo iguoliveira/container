@@ -1,11 +1,11 @@
 from PySimpleGUI import PySimpleGUI as g
 
 class ButtonWindow:
-    def buttonWindow(self, nome):
+    def buttonWindow(self, method):
         g.theme('DarkBlue4')
 
         linha = [
-            [g.Text(nome, key='textbox')]
+            [g.Text(method, key='textbox')]
         ]
 
         layout = [
