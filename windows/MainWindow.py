@@ -10,8 +10,7 @@ class MainWindow:
         ]
 
         layout = [
-            [g.Text('Criado e Desenvolvido por Igor Oliveira')],
-            [g.Button('Add')],
+            [g.Text('Created by Igor Oliveira')],
             [g.Frame('Exercicios', layout=linha, key='container')]
         ]
 
