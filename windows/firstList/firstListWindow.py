@@ -135,3 +135,105 @@ class ButtonWindow:
                 print("-" * 50)
 
         window.close()
+
+    # Button Five
+    def buttonWindow5(self):
+        g.theme('DarkBlue4')
+
+        linha = [
+            [g.Text("Enter with your name")],
+            [g.Input(key="name")],
+            [g.Button("Execute")],
+            [g.Output(size=(60, 15))]
+        ]
+
+        layout = [
+            [g.Button('Back')],
+            [g.Frame("Exercicio", layout=linha, key='container')]
+        ]
+
+        window = g.Window('Exercicio', layout=layout, size=(250, 250))
+
+        while True:
+            event, values = window.read()
+            if event == "Back" or event == g.WINDOW_CLOSED:
+                break
+
+            elif event == "Execute":
+                print("-" * 50)
+                for i in range(len(values["name"])):
+                    if i == 0:
+                        print(values["name"].upper())
+                    else:
+                        print(values["name"][:-i].upper())
+                print("-" * 50)
+
+        window.close()
+
+    # Button Six
+    def buttonWindow6(self):
+        g.theme('DarkBlue4')
+
+        linha = [
+            [g.Text("Enter with your name")],
+            [g.Input(key="name")],
+            [g.Button("Execute")],
+            [g.Output(size=(60, 15))]
+        ]
+
+        layout = [
+            [g.Button('Back')],
+            [g.Frame("Exercicio", layout=linha, key='container')]
+        ]
+
+        window = g.Window('Exercicio', layout=layout, size=(250, 250))
+
+        while True:
+            event, values = window.read()
+            if event == "Back" or event == g.WINDOW_CLOSED:
+                break
+
+            elif event == "Execute":
+                print("-" * 50)
+                for i in range(len(values["name"])):
+                    print(values["name"][:i+1].upper())
+                print("-" * 50)
+
+        window.close()
+
+    # Button Seven
+    def buttonWindow7(self):
+        g.theme('DarkBlue4')
+
+        linha = [
+            [g.Text("A normal cellphone number contain 9 digits,")],
+            [g.Text("so enter with your cellphone number")],
+            [g.Input(key="number")],
+            [g.Button("Execute")],
+            [g.Output(size=(60, 15))]
+        ]
+
+        layout = [
+            [g.Button('Back')],
+            [g.Frame("Exercicio", layout=linha, key='container')]
+        ]
+
+        window = g.Window('Exercicio', layout=layout, size=(250, 250))
+
+        while True:
+            event, values = window.read()
+            if event == "Back" or event == g.WINDOW_CLOSED:
+                break
+
+            elif event == "Execute":
+                print("-" * 50)
+                inputUsuario = values["number"].replace("-","")
+                if len(inputUsuario) == 8:
+                    print("Correct Number is: 9" + inputUsuario)
+                elif len(inputUsuario) <= 7 or len(inputUsuario) >= 10:
+                    print("Invalid Number")
+                else:
+                    print("Number is Correct!")
+                print("-" * 50)
+
+        window.close()

@@ -6,7 +6,8 @@ class MainWindow:
 
         linha = [
             [g.Button('Exercicio 1'), g.Button('Exercicio 2'), g.Button('Exercicio 3'), g.Button('Exercicio 4')],
-            [g.Button('Exercicio 5'), g.Button('Exercicio 6'), g.Button('Exercicio 7')]
+            [g.Button('Exercicio 5'), g.Button('Exercicio 6'), g.Button('Exercicio 7'), g.Button('Exercicio 8')],
+            [g.Button('Exercicio 9'), g.Button('Exercicio 10'), g.Button('Exercicio 11'), g.Button('Exercicio 12')],
         ]
 
         layout = [
