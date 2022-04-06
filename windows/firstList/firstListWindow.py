@@ -2,7 +2,7 @@ from PySimpleGUI import PySimpleGUI as g
 
 class ButtonWindow:
 
-    #Button One
+    #Button One. First Exercise of the list 01
     def buttonWindow1(self):
         g.theme('DarkBlue4')
 
@@ -36,7 +36,7 @@ class ButtonWindow:
 
         window.close()
 
-    #Button Two
+    #Button Two. Second Exercise of the list 01
     def buttonWindow2(self):
         g.theme('DarkBlue4')
 
@@ -74,7 +74,7 @@ class ButtonWindow:
 
         window.close()
 
-    # Button Three
+    # Button Three. Third Exercise of the list 01
     def buttonWindow3(self):
         g.theme('DarkBlue4')
 
@@ -105,7 +105,7 @@ class ButtonWindow:
 
         window.close()
 
-    # Button Four
+    # Button Four. Fourth Exercise of the list 01
     def buttonWindow4(self):
         g.theme('DarkBlue4')
 
@@ -136,7 +136,7 @@ class ButtonWindow:
 
         window.close()
 
-    # Button Five
+    # Button Five. Fifth Exercise of the list 01
     def buttonWindow5(self):
         g.theme('DarkBlue4')
 
@@ -170,7 +170,7 @@ class ButtonWindow:
 
         window.close()
 
-    # Button Six
+    # Button Six. Sixth Exercise of the list 01
     def buttonWindow6(self):
         g.theme('DarkBlue4')
 
@@ -201,13 +201,13 @@ class ButtonWindow:
 
         window.close()
 
-    # Button Seven
+    # Button Seven. Seventh exercise of the list 01
     def buttonWindow7(self):
         g.theme('DarkBlue4')
 
         linha = [
-            [g.Text("A normal cellphone number contain 9 digits,")],
-            [g.Text("so enter with your cellphone number")],
+            [g.Text("A cellphone number must contains")],
+            [g.Text("9 digits. Insert a cellphone number")],
             [g.Input(key="number")],
             [g.Button("Execute")],
             [g.Output(size=(60, 15))]

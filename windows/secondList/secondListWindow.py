@@ -1,9 +1,10 @@
+from threading import Thread
 from PySimpleGUI import PySimpleGUI as g
 
 
 class ButtonWindow02:
 
-    #Button Eight
+    #Button Eight. First Exercise of the list 02
     def buttonWindow8(self):
         g.theme('DarkBlue4')
 
@@ -36,15 +37,16 @@ class ButtonWindow02:
 
         window.close()
 
-    #Button Nine
+    #Button Nine. Second Exercise of the list 02
+    i = 0
     def buttonWindow9(self):
         g.theme('DarkBlue4')
 
         linha = [
             [g.Text("Enter with a number")],
             [g.Input(key="number")],
-            [g.Button("Get")],
-            [g.Output(size=(60,15))]
+            [g.Text("Click Count: {}".format(str(self.i)), key='count')],
+            [g.Button("Get")]
         ]
 
         layout = [
@@ -54,25 +56,24 @@ class ButtonWindow02:
 
         window = g.Window('Exercicio', layout=layout, size=(250, 250))
 
+        def detect_button():
+            global i
+
+            while True:
+                if True:
+                    i += 1
+                    window.write_event_value('-COUNT-', i)
+
+        Thread(target=detect_button, daemon=True).start()
 
         while True:
             event, values = window.read()
             if event == "Back" or event == g.WINDOW_CLOSED:
                 break
 
-            elif event == "Get":
-                listNum = []
-                
-                if len(listNum) >= 6:
-                    count = 0
-                    for i in listNum:
-                        if i % 2 == 0:
-                            count += i
-                    print("-" * 50)
-                    print("Soma total eh: " + count)
-                    print("-" * 50)
-                    listNum.clear()
-                else:
-                    listNum.append(int(values["number"]))
+            elif event == 'Get':
+                count = values[event]
+                print(count)
+                window['count'].update(str(count))
 
         window.close()
