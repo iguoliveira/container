@@ -7,8 +7,9 @@ export default function Carousel1() {
         <Carousel>
             <Carousel.Item>
                 <img
+                id="img1"
                 className="d-block w-100"
-                src="img/miranha.jpg"
+                src="img/carousel/img1.jpg"
                 alt="First slide"
                 style={{height:"80vh"}}
                 />
@@ -16,7 +17,7 @@ export default function Carousel1() {
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="img/fort.png"
+                src="img/carousel/img2.png"
                 alt="Second slide"
                 style={{height:"80vh"}}
                 />
@@ -24,7 +25,15 @@ export default function Carousel1() {
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="img/fort2.png"
+                src="img/carousel/img3.jpg"
+                alt="Third slide"
+                style={{height:"80vh"}}
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                className="d-block w-100"
+                src="img/carousel/img4.jpg"
                 alt="Third slide"
                 style={{height:"80vh"}}
                 />

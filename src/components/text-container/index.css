@@ -1,0 +1,25 @@
+section{
+    display: flex;
+    justify-content: center;
+}
+
+.items{
+    margin-top: 25px;
+    display: flex;
+    width: 50%;
+}
+
+.icon-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-container{
+    margin-left: 15px;
+}
+
+.icon-image{
+    height: 250px;
+    border-radius: 8px;
+}

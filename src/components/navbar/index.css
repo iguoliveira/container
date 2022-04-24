@@ -1,6 +1,6 @@
 .main-nav{
     overflow: hidden;
-    background-color: #707070;
+    background-color: #2b2b2b;
 }
 
 .main-nav a{
@@ -13,7 +13,7 @@
 }
 
 .main-nav a:hover{
-    background-color: #d4d4d4;
+    background-color: #383838;
     color: black;
 }
 
