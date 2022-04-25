@@ -5,7 +5,7 @@ import Footer from './components/footer';
 
 export default function App() {
   return (
-    <div className="App" style={{position:"relative"}}>
+    <div className="App" style={{ position:"relative" }}>
       <Header/>
       <Carousel1/>
       <Text/>
