@@ -8,6 +8,12 @@
 }
 
 /* FIRST SECTION OF THE FOOTER || ABOUT ME */
+.about-me{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .about-me-header{
     padding: 2px;
     color: #dd07a8;
@@ -18,7 +24,7 @@
     color: whitesmoke;
 }
 
-/* SECOND SECTION OF THE FOOTE || PROJECTS */
+/* SECOND SECTION OF THE FOOTER || PROJECTS */
 .personal-projects{
     display: flex;
     flex-direction: column;
@@ -41,7 +47,7 @@
     background-image: linear-gradient(90deg, #dd07a8, #cf079d);
     background-size: 0% 2px;
     background-repeat: no-repeat;
-    background-position: left bottom;
+    background-position: bottom;
     transition: background-size 500ms ease;
     padding: 2px;
 }
@@ -56,10 +62,11 @@
 }
 
 .personal-projects-list a:hover{
-    transition: 0.5s;
+    transition: 0.3s;
     color: rgb(172, 172, 172);
 }
 
+/* THIRD SECTION OF THE FOOTER || MIDIA LINKS */
 .midia-links{
     font-size: 1.25em;
 }

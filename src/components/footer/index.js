@@ -11,8 +11,8 @@ export default function Footer(){
             <div className='personal-projects'>
                 <div className='personal-projects-header'>SOME PROJECTS</div>
                 <div className='personal-projects-list'>
-                    <div><a href='https://github.com/iguoliveira/calculatorWeb' target={ '_blank' }>Web Calculator</a></div>
-                    <div><a href='https://github.com/iguoliveira/javaCalculator' target={ '_blank' }>Java Calculator</a></div>
+                    <a href='https://github.com/iguoliveira/calculatorWeb' target={ '_blank' }><div>Web Calculator</div></a>
+                    <a href='https://github.com/iguoliveira/javaCalculator' target={ '_blank' }><div>Java Calculator</div></a>
                 </div>
             </div>
 
