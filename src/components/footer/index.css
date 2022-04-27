@@ -1,72 +1,55 @@
 /* MAIN FOOTER */
 .footer{
     display: flex;
-    justify-content: space-around;
-    background-color: #2b2b2b;
+    justify-content: right;
     width: 100%;
-    padding: 20px;
+    position: fixed;
+    bottom: 25px;
 }
 
-/* FIRST SECTION OF THE FOOTER || ABOUT ME */
-.about-me{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.about-me-header{
-    padding: 2px;
-    color: #dd07a8;
-    font-size: 1.1em;
-}
-
-.about-me-text{
-    color: whitesmoke;
-}
-
-/* SECOND SECTION OF THE FOOTER || PROJECTS */
 .personal-projects{
+    margin-right: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .personal-projects-header{
-    color: #dd07a8;
-    font-size: 1.1em;
+    background-color: #dd07a8;
+    color: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1.2em;
 }
 
 .personal-projects-list{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: whitesmoke;
+    display: none;
 }
 
 .personal-projects-list div{
-    background-image: linear-gradient(90deg, #dd07a8, #cf079d);
-    background-size: 0% 2px;
+    margin-top: 5px;
+    background-image: linear-gradient(90deg, #dd07a8, #dd07a8);
+    background-size: 0% 0px;
     background-repeat: no-repeat;
-    background-position: bottom;
-    transition: background-size 500ms ease;
-    padding: 2px;
+    background-position: left bottom;
+    transition: background-size 600ms ease;
+    padding: 2px 5px;
+    border-radius: 2px;
 }
 
 .personal-projects-list a{
     text-decoration: none;
-    color: whitesmoke;
+    color: gray;
 }
 
 .personal-projects-list div:hover{
-    background-size: 100% 2px;
+    background-size: 100% 100px;
 }
 
 .personal-projects-list a:hover{
-    transition: 0.3s;
-    color: rgb(172, 172, 172);
-}
-
-/* THIRD SECTION OF THE FOOTER || MIDIA LINKS */
-.midia-links{
-    font-size: 1.25em;
+    transition: 0.8s;
+    color: whitesmoke;
 }

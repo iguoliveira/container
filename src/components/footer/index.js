@@ -1,25 +1,25 @@
 import './index.css'
+import './script.js'
 
 export default function Footer(){
+    function appearProjects(e){
+        e.preventDefault()
+        if(document.getElementById('projects').style.display == 'none'){
+            document.getElementById('projects').style.display = 'block'
+        }
+        else{
+            document.getElementById('projects').style.display = 'none'
+        }
+    }
+
     return(
         <footer className='footer'>
-            <div className='about-me'>
-                <div className='about-me-header'>IGOR OLIVEIRA RODRIGUES</div>
-                <div className='about-me-text'>Sou um desenvolvedor web!</div>
-            </div>
-
             <div className='personal-projects'>
-                <div className='personal-projects-header'>SOME PROJECTS</div>
-                <div className='personal-projects-list'>
-                    <a href='https://github.com/iguoliveira/calculatorWeb' target={ '_blank' }><div>Web Calculator</div></a>
-                    <a href='https://github.com/iguoliveira/javaCalculator' target={ '_blank' }><div>Java Calculator</div></a>
+                <div className='personal-projects-header' onClick={ appearProjects }>PROJECTS</div>
+                <div className='personal-projects-list' id='projects'>
+                    <div><a href='https://github.com/iguoliveira/calculatorWeb' target={ '_blank' }>Web Calculator</a></div>
+                    <div><a href='https://github.com/iguoliveira/javaCalculator' target={ '_blank' }>Java Calculator</a></div>
                 </div>
-            </div>
-
-            <div className='midia-links'>
-                <div>Github</div>
-                <div>Linkedos</div>
-                <div>Twitter</div>
             </div>
         </footer>
     )
