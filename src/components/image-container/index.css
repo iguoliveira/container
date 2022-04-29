@@ -6,16 +6,17 @@ section{
 .items{
     margin-top: 50px;
     display: flex;
-    width: 50%;
+    max-width: 50%;
 }
 
 .icon-container{
     display: flex;
     flex-direction: column;
+    max-width: 100%;
 }
 
 .icon-image{
-    height: 400px;
+    max-width: 100%;
     border-radius: 4px;
 }
 
@@ -25,8 +26,9 @@ section{
     background-color: #dd07a8;
     padding: 5px 10px;
     border-radius: 4px;
-    font-size: 1.825em;
+    font-size: 2vw;
     font-weight: bold;
+    text-align: center;
 }
 
 .text-container{
@@ -34,18 +36,18 @@ section{
 }
 
 .big-text{
-    font-size: 8em;
+    max-width: 100%;
+    font-size: 6vw;
     color: whitesmoke;
     background-color: #dd07a8;
     padding: 5px 5px;
     border-radius: 4px;
     font-weight: bold;
-    width: 85%;
 }
 
 .sub-text{
     text-align: left;
-    font-size: 2.5em;
-    color: grey;
+    font-size: 2vw;
+    color: rgb(150, 150, 150);
     font-weight: bold;
 }

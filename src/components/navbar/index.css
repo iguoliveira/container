@@ -32,5 +32,5 @@
 
 .main-option:hover{
     transition: 0.3s;
-    color: black;
+    color: rgb(194, 194, 194);
 }
