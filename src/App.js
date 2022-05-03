@@ -1,6 +1,6 @@
 import "./app.css"
-import ClickerContainer from "./components/clicker-container";
-import UpgradeContainer from "./components/upgrade-container";
+import { ClickerContainer } from "./components/clicker-container";
+import { UpgradeContainer } from "./components/upgrade-container";
 import { useState } from "react";
 
 function App() {
