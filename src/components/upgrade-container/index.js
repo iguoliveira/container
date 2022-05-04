@@ -7,7 +7,7 @@ export function UpgradeContainer({ clicks, clicksAdd, setClicksAdd, name }){
 
     function buyUpgrade(){
         if((clicks+clicksAdd) >= price){
-            setClicksAdd(-price)
+            setClicksAdd(clicksAdd-price)
             setPrice(Math.floor((price/2)*3))
             setQtd(qtd+1)
         }else{
@@ -18,8 +18,8 @@ export function UpgradeContainer({ clicks, clicksAdd, setClicksAdd, name }){
     useEffect(() => {
         if(qtd >= 1){
             setTimeout(() => {
-                setClicksAdd(state => state + (1*qtd))
-            }, 1000)
+                setClicksAdd(state => state + (0.2*qtd))
+            }, 500)
         }
     }, [ clicksAdd ])
 

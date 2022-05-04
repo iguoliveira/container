@@ -21,7 +21,7 @@ export function ClickerContainer({ clicks, setClicks, clicksAdd}){
             onClick={() =>
                 clickReact()
                 } />
-            <div className="text-3xl mt-2">{ clicks + clicksAdd } Clicks</div>
+            <div className="text-3xl mt-2">{ (clicks + clicksAdd).toLocaleString(undefined, { maximumFractionDigits: 2 }) } Click Points</div>
         </div>
     )
 }
