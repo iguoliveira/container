@@ -1,17 +1,23 @@
-import "./app.css"
 import { ClickerContainer } from "./components/clicker-container";
 import { UpgradeContainer } from "./components/upgrade-container";
+import { Navbar } from "./components/navbar/Navbar";
+
 import { useState } from "react";
 
-function App() {
-  const [clicks, setClicks] = useState(0);
-  const [preco, setPreco] = useState(10);
+
+export function App() {
+  const [ clicks, setClicks ] = useState(0)
+  const [ clicksAdd, setClicksAdd ] = useState(0)
+
   return (
-    <div className="main-container">
-      <ClickerContainer clicks={clicks} setClicks={setClicks}/>
-      <UpgradeContainer preco={preco} setPreco={setPreco} setClicks={setClicks} clicks={clicks}/>
+    <div>
+      <Navbar />
+      <div className="mt-20 flex justify-around">
+        <ClickerContainer clicks={clicks} setClicks={setClicks} clicksAdd={clicksAdd}/>
+        <div>
+          <UpgradeContainer clicks={clicks} clicksAdd={clicksAdd} setClicksAdd={setClicksAdd} name={"Moriko-san"}/>
+        </div>
+      </div>
     </div>
   );
 }
-
-export default App;

@@ -1,32 +1,36 @@
-import React, { useEffect, useState } from "react";
-import "./index.css"
+import { useEffect, useState } from "react";
 
-export function UpgradeContainer({preco, setPreco, clicks,setClicks}){
-    const [ isQtd, setIsQtd] = useState(0)
+export function UpgradeContainer({ clicks, clicksAdd, setClicksAdd, name }){
+    const [ qtd, setQtd ] = useState(0)
+    const [ price, setPrice ] = useState(10);
+
+
+    function buyUpgrade(){
+        if((clicks+clicksAdd) >= price){
+            setClicksAdd(-price)
+            setPrice(Math.floor((price/2)*3))
+            setQtd(qtd+1)
+        }else{
+            console.log("SEM MONEY")
+        }
+    }
 
     useEffect(() => {
-        if(isQtd >= 1){
+        if(qtd >= 1){
             setTimeout(() => {
-                setClicks(clicks+0.01)
+                setClicksAdd(state => state + (1*qtd))
             }, 1000)
         }
-    }, [ clicks ])
-
+    }, [ clicksAdd ])
 
     return(
-        <div>
-            <div>MORIKO</div>
-            <div>PRECO: {preco}</div>
-            <div>QTD: { isQtd }</div>
-            <button onClick={() => {
-                if(clicks >= preco){
-                    setClicks(clicks - preco)
-                    setPreco(Math.floor((preco/2)*3))
-                    setIsQtd(isQtd+1)
-                }else{
-                    console.log("SEM MONEY")
-                }
-            }}>Comprar</button>
+        <div className="mb-5">
+            <div className="font-bold text-xl">{ name }</div>
+            <div className="text-lg">Price: { price }</div>
+            <div className="text-lg">Quantity: { qtd }</div>
+            <button className="bg-black text-white rounded px-2.5 py-1 hover:bg-slate-800 transition-all ease-linear text-sm mt-0.5" onClick={() => {
+                buyUpgrade()
+            }}>Buy</button>
         </div>
     )
 }
