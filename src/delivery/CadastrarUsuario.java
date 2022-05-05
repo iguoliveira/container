@@ -4,10 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class CadastrarUsuario extends JFrame {
-
     JPanel inputs;
 
     JLabel lname;
@@ -23,15 +21,6 @@ public class CadastrarUsuario extends JFrame {
     JTextField endy;
 
     JButton button;
-
-    public ArrayList get_user_data(JTextField value1, JTextField value2, JTextField value3, JTextField value4){
-        ArrayList<String> user_data = new ArrayList<>();
-        user_data.add(value1.getText());
-        user_data.add(value2.getText());
-        user_data.add(value3.getText());
-        user_data.add(value4.getText());
-        return user_data;
-    }
 
     CadastrarUsuario(){
 //        Main Frame
@@ -53,7 +42,7 @@ public class CadastrarUsuario extends JFrame {
         inputs.add(name);
 
 //        CPF Label and Input
-        lcpf = new JLabel("CPF: ");
+        lcpf = new JLabel("CPF:D ");
         inputs.add(lcpf);
 
         cpf = new JTextField();
@@ -84,7 +73,8 @@ public class CadastrarUsuario extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == button){
-                    get_user_data(name, cpf, endx, endy);
+                    Usuario u = new Usuario();
+                    u.get_user_data(name.getText(), cpf.getText(), endx.getText(), endy.getText());
                 }
             }
         });

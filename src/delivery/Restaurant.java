@@ -4,13 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.security.Permission;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Restaurant extends JFrame {
-
 //    Main Panel
     JPanel options;
 
@@ -45,7 +40,9 @@ public class Restaurant extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == menu){
-                    get_menu().forEach((key, value) ->{
+                    MenuOptions m = new MenuOptions();
+                    printMenu.setText("");
+                    m.get_menu().forEach((key, value) ->{
                         printMenu.append("Valor: " + value + " | " + "Lanche: " + key + "\n");
                     });
                 }
@@ -69,11 +66,27 @@ public class Restaurant extends JFrame {
         addItems = new JButton("Adicionar Itens");
         addItems.setPreferredSize(new Dimension(200,30));
         addItems.setBackground(Color.pink);
+        addItems.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == addItems){
+                    AddItemsToMenu add = new AddItemsToMenu();
+                }
+            }
+        });
         options.add(addItems);
 
         removeItems = new JButton("Remover Itens");
         removeItems.setPreferredSize(new Dimension(200,30));
         removeItems.setBackground(Color.pink);
+        removeItems.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == removeItems){
+                    RemoveItemsFromMenu r = new RemoveItemsFromMenu();
+                }
+            }
+        });
         options.add(removeItems);
 
         printMenu = new JTextArea();
@@ -81,13 +94,5 @@ public class Restaurant extends JFrame {
         options.add(printMenu);
 
         this.setVisible(true);
-    }
-
-    public HashMap get_menu(){
-        HashMap<String, Double> menu = new HashMap<>();
-        menu.put("Quarteirao", 25.23);
-        menu.put("BkLancheFeliz", 30.00);
-        menu.put("seila", 10.00);
-        return menu;
     }
 }
