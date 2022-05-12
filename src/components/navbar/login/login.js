@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import useAuth from "../../../hooks/useAuth"
 import { firebase, auth } from "./../../../service/firebase"
-import { Logout } from "./Logout"
+import { Logout } from "./logout"
 
 export function Login(){
     const { user, setUser } = useAuth()
@@ -24,9 +24,9 @@ export function Login(){
 
     const handleClickLogout = async () => {
         firebase.auth().signOut().then(function() {
-            console.log("SIGNED OUT")
-            console.log(user.name)
+            console.log(auth.currentUser.displayName)
         })
+        setIsLogin(false)
     }
 
     const handleClickLogin = async () => {

@@ -1,4 +1,4 @@
-import { Login } from "./login/Login"
+import { Login } from "./login/login"
 
 export function Navbar(){
     return(

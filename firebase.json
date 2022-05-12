@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "waifu-clicker-game",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
