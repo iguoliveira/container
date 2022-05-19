@@ -1,0 +1,99 @@
+body{
+    background-color: whitesmoke;
+}
+
+.section{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    text-align: center;
+    gap: 10px;
+}
+
+.name{
+    border: 0;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+}
+
+.name:hover{
+    border-bottom: 2px solid black;
+}
+.msgText{
+    border: 0;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+}
+
+.msgText:hover{
+    border-bottom: 2px solid black;
+    outline: none;
+}
+
+.btnSend{
+    width: 30%;
+    background-color: rgb(5, 5, 5);
+    border: 0;
+    padding: 4px 8px 4px 8px;
+    color: whitesmoke;
+    border-radius: 2.5px;
+    cursor: pointer;
+}
+
+.btnSend:hover{
+    background-color: rgb(255, 25, 151);
+    color: black;
+    transition: 0.5s;
+}
+
+.conteudo{
+    display: flex;
+}
+
+.msg{
+    display: flex;
+    align-items: end;
+    gap: 0.25em;
+}
+
+.divName{
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.divTime{
+    font-size: 0.65em;
+    padding-left: 0.2em;
+    color: lightslategray;
+}
+
+.btnDelete{
+    border: 0;
+    background-color: transparent;
+    color: gainsboro;
+    font-size: 0.7em;
+}
+
+.btnDelete:hover{
+    background-color: red;
+    color: white;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 2.5px;
+    transition: 0.25s;
+}
+
+.content{
+    background-color: lightblue;
+    padding: 20px 80px 20px 80px;
+    border-radius: 2.5px;
+}
