@@ -1,20 +1,3 @@
-document.getElementById("btnSend").addEventListener("click", (() => {
-    if(document.getElementById("name").value != ""){
-        document.getElementById("name").setAttribute("readonly", "")
-        if(document.getElementById("msg").value != ""){
-            if(document.getElementById("msg").value.length >= 5 && document.getElementById("msg").value.length <=100){
-                enviarMSG()
-            }else{
-                alert("Message with a wrong size! Reminder: min 5chars || max 100chars")
-            }
-        }else{
-            alert("Send something, doesn't let in blank!")
-        }
-    }else{
-        alert("Tell us your name before you send a message")
-    }
-}))
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 import { getDatabase, ref, set, push, remove, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
 
@@ -32,10 +15,33 @@ const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
 const dbRef = ref(db, 'users');
 
+document.getElementById("btnSend").addEventListener("click", (() => {
+    if(document.getElementById("name").value != ""){
+        document.getElementById("name").setAttribute("readonly", "")
+        if(document.getElementById("msg").value != ""){
+            if(document.getElementById("msg").value.length >= 5 && document.getElementById("msg").value.length <=100){
+                enviarMSG()
+            }else{
+                alert("Message with a wrong size! Reminder: min 5chars || max 100chars")
+            }
+        }else{
+            alert("Send something, doesn't let in blank!")
+        }
+    }else{
+        alert("Tell us your name before you send a message")
+    }
+}))
+
+function deleteMessage(key){
+    remove(ref(db, 'users/' + key))
+    console.log(document.getElementById(key).parentElement)
+    document.getElementById(key).parentElement.remove()
+}
+
 onValue(dbRef, (snapshot) => {
     const data = snapshot.val();
     console.log(data);
-    let div
+    let div = ""
 
     snapshot.forEach(function (childSnapshot) {
         var key = childSnapshot.key;
@@ -50,6 +56,7 @@ onValue(dbRef, (snapshot) => {
 
         let msg = document.createElement('div')
         msg.classList.add('divMsg')
+        msg.setAttribute('id', key)
         msg.textContent = `${childSnapshot.val().mensagem}`
 
         let time = document.createElement('div')
@@ -58,6 +65,7 @@ onValue(dbRef, (snapshot) => {
 
         let btnDelete = document.createElement('div')
         btnDelete.classList.add("btnDelete")
+        btnDelete.setAttribute("id", key)
         btnDelete.textContent = "Delete"
 
         div = document.createElement('div')
@@ -65,9 +73,14 @@ onValue(dbRef, (snapshot) => {
         div.appendChild(name)
         div.appendChild(msg)
         div.appendChild(time)
-        div.appendChild(btnDelete)
-    });
 
+        if(childSnapshot.val().nome == document.getElementById("name").value){
+            btnDelete.onclick = () => {
+                deleteMessage(key)
+            }
+            div.appendChild(btnDelete)
+        }
+    });
     atualizarHTML(div);
 });
 
