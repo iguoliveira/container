@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.card-container {
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mdl-card {
+  width: 90%;
+  margin: 0 auto 15px auto;
+}
+
+.card-inner {
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+}
+
+.card-inner div,
+.card-inner button {
+  display: flex;
+  justify-self: center;
+}
+
+.card-inner div {
+  align-items: center;
+}
