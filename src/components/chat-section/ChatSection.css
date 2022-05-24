@@ -1,0 +1,34 @@
+.float-chat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chat-content{
+    padding: 35vh;
+}
+
+.chat-input{
+    margin-top: 2vh;
+}
+
+.input-message{
+    border: 0;
+    border-bottom: 1px solid black;
+    outline: 0;
+    overflow: 0;
+}
+
+.btn-message{
+    margin-left: 1vh;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    padding: 4px;
+    box-shadow: 1px 1px 1px 0px black;
+}
+
+.btn-message:hover{
+    font-size: 1.5vh;
+    background-color: whitesmoke;
+}
