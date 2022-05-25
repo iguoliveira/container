@@ -54,14 +54,27 @@ body{
     transition: 0.35s;
 }
 
-.conteudo{
+.content{
     display: flex;
+    flex-direction: column;
 }
 
 .msg{
+    background-color: white;
+    width: 30%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+.myMsg{
     display: flex;
+    flex-direction: column;
     align-items: end;
-    gap: 0.25em;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
 }
 
 .divName{
@@ -70,6 +83,8 @@ body{
 }
 
 .divTime{
+    display: flex;
+    justify-content: end;
     font-size: 0.65em;
     padding-left: 0.2em;
     color: lightslategray;
