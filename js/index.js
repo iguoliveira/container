@@ -15,7 +15,28 @@ const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
 const dbRef = ref(db, 'users');
 
-// Check the fields and send the message
+// Check the fields and send the message with the 'Enter' key
+document.getElementById("msg").addEventListener("keypress", ((event) => {
+    if(event.key === "Enter"){
+        if(document.getElementById("name").value != ""){
+            document.getElementById("name").setAttribute("readonly", "")
+            if(document.getElementById("msg").value != ""){
+                if(document.getElementById("msg").value.length >= 2 && document.getElementById("msg").value.length <= 100){
+                    enviarMSG()
+                    document.getElementById("msg").value = ""
+                }else{
+                    alert("Message with a wrong size! Reminder: min 2chars || max 100chars")
+                }
+            }else{
+                alert("Send something, doesn't let in blank!")
+            }
+        }else{
+            alert("Tell us your name before you send a message")
+        }
+    }
+}))
+
+// Check the fields and send the message with the click of the 'Send' button
 document.getElementById("btnSend").addEventListener("click", (() => {
     if(document.getElementById("name").value != ""){
         document.getElementById("name").setAttribute("readonly", "")
@@ -39,7 +60,7 @@ function deleteMessage(key){
     remove(ref(db, 'users/' + key))
 }
 
-// Create the new component for the message
+// Create the new component for the messages
 onValue(dbRef, (snapshot) => {
     document.getElementById('content').innerHTML = ''
 
@@ -49,7 +70,7 @@ onValue(dbRef, (snapshot) => {
         let btnDelete = document.createElement('div')
         btnDelete.classList.add("btnDelete")
         btnDelete.setAttribute("id", key+childSnapshot.val().nome)
-        btnDelete.textContent = "Delete"
+        btnDelete.textContent = "delete"
 
         let name = document.createElement('div')
         name.classList.add('divName')
@@ -81,16 +102,12 @@ onValue(dbRef, (snapshot) => {
             btnDelete.style = 'display:none;'
             atualizarHTML(div);
         }else{
-            div.style.backgroundColor = '#F8F2F5'
+            div.style.backgroundColor = '#BDF0D6'
             atualizarHTML(newDiv);
         }
         
         document.getElementById(key + childSnapshot.val().nome).onclick = () => {
-            btnDelete.style = 'display:none;'
             deleteMessage(key)
-            atualizarHTML(newDiv)
-            console.log(newDiv)
-            document.getElementById(key+key).innerHTML = "This message has been deleted!"
         }
     });
 });
@@ -110,12 +127,11 @@ function enviarMSG() {
 // Update the DOM everytime the page was updated
 function atualizarHTML(value) {
     document.getElementById("content").appendChild(value)
-    // ajustarScroll();
+    ajustarScroll();
 }
 
-// function ajustarScroll() {
-//     var divConteudo = document.getElementById("content");
-//     divConteudo.scrollTop = divConteudo.scrollHeight;
-// 
-//     PEGA A DIV CONTEUDO E ROLA PARA O TAMANHO MAXIMO DELA
-// }
+// Adjust the scroll position when a new message was send
+function ajustarScroll() {
+    var divConteudo = document.getElementById("content");
+    divConteudo.scrollTop = divConteudo.scrollHeight;
+}

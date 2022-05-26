@@ -10,14 +10,14 @@ body{
 
 .msgText{
     border: 0;
-    border-bottom: 0.25vh solid #192E41;
+    border-bottom: 2px solid #192E41;
     background-color: transparent;
     color: white;
     width: 25%;
 }
 
 .msgText:hover{
-    border-bottom: 0.25vh solid #0e1d43;
+    border-bottom: 2px solid #112333;
     outline: none;
     transition: 0.25s;
 }
@@ -33,7 +33,7 @@ body{
 }
 
 .btnSend:hover{
-    background-color: #142652;
+    background-color: #112333;
     transition: 0.35s;
 }
 
@@ -97,15 +97,28 @@ body{
 }
 
 .chatHeader{
+    display: flex;
+    align-items: center;
+    gap: 0.5vh;
     background-color: #52688F;
     margin-top: 20px;
     padding: 20px 80px 20px 80px;
     width: 60%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    font-size: 1.85em;
+}
+
+.text-icon{
+    font-size: 4vh;
     color: whitesmoke;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.icon-header{
+    margin-top: 1vh;
+    display: flex;
+    cursor: pointer;
 }
 
 .chatFooter{
@@ -119,15 +132,16 @@ body{
 }
 
 .name{
-    border: 0;
-    border-bottom: 0.25vh solid #192E41;
+    border: 2px solid #192E41;
+    border-radius: 5px;
     background-color: transparent;
     color: white;
     text-align: center;
+    padding: 4px;
 }
 
 .name:hover{
-    border-bottom: 0.25vh solid #0e1d43;
+    border: 0.35vh solid #112333;
     outline: none;
     transition: 0.25s;
 }
