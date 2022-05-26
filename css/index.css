@@ -1,5 +1,5 @@
 body{
-    background-color: whitesmoke;
+    background-color: #151B25;
 }
 
 .section{
@@ -8,40 +8,23 @@ body{
     align-items: center;
 }
 
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20%;
-    text-align: center;
-    gap: 10px;
-}
-
-.name{
-    border: 0;
-    border-bottom: 1px solid black;
-    background-color: transparent;
-    text-align: center;
-}
-
-.name:hover{
-    border-bottom: 2px solid black;
-}
 .msgText{
     border: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 0.25vh solid #192E41;
     background-color: transparent;
     color: white;
+    width: 25%;
 }
 
 .msgText:hover{
-    border-bottom: 2px solid black;
+    border-bottom: 0.25vh solid #0e1d43;
     outline: none;
+    transition: 0.25s;
 }
 
 .btnSend{
     width: 4%;
-    background-color: rgb(5, 5, 5);
+    background-color: #151B25;
     border: 0;
     padding: 4px;
     color: whitesmoke;
@@ -50,36 +33,43 @@ body{
 }
 
 .btnSend:hover{
-    background-color: rgb(196, 4, 157);
+    background-color: #142652;
     transition: 0.35s;
 }
 
 .content{
     display: flex;
     flex-direction: column;
+    background-color: #4C5270;
+    padding: 20px 80px 20px 80px;
+    width: 60%;
+    overflow-y: auto;
+    height: 65vh;
 }
 
 .msg{
-    background-color: white;
+    background-color: #82B9E9;
     width: 30%;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 1vh;
     border-radius: 8px;
+    box-shadow: 0px 0px 4px 0px black;
 }
 
-.myMsg{
+.userMsg-container{
     display: flex;
-    flex-direction: column;
-    align-items: end;
-    background-color: white;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 8px;
+    justify-content: right;
+    width: 100%;
 }
 
 .divName{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.5vh;
     font-weight: bold;
     font-size: 1em;
+    margin-bottom: 0.5vh;
 }
 
 .divTime{
@@ -93,43 +83,55 @@ body{
 .btnDelete{
     border: 0;
     background-color: transparent;
-    color: gainsboro;
+    color: #52688F;
     font-size: 0.7em;
 }
 
 .btnDelete:hover{
-    background-color: red;
+    background-color: #E4021B;
     color: white;
-    padding: 2px;
+    padding: 0.35vh;
     cursor: pointer;
     border-radius: 2.5px;
     transition: 0.25s;
 }
 
-.content{
-    background-color: rgba(41, 234, 234, 0.2);
-    padding: 20px 80px 20px 80px;
-    width: 60%;
-}
-
 .chatHeader{
-    background-color: darkcyan;
+    background-color: #52688F;
     margin-top: 20px;
-    padding: 10px 80px 10px 80px;
+    padding: 20px 80px 20px 80px;
     width: 60%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    font-size: 1.2em;
+    font-size: 1.85em;
     color: whitesmoke;
     font-weight: bold;
 }
 
 .chatFooter{
     display: flex;
-    background-color: darkcyan;
+    justify-content: space-around;
+    background-color: #52688F;
     width: 60%;
-    gap: 5px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    padding: 10px 80px 10px 80px;
+    padding: 20px 80px 20px 80px;
+}
+
+.name{
+    border: 0;
+    border-bottom: 0.25vh solid #192E41;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+}
+
+.name:hover{
+    border-bottom: 0.25vh solid #0e1d43;
+    outline: none;
+    transition: 0.25s;
+}
+
+.msg-container{
+    width: 100%;
 }

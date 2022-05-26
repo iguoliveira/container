@@ -9,21 +9,23 @@
 </head>
 
 <body>
-    <div class="section">
-        <div class="header">
-            <label for="name">Name</label>
-            <input type="text" placeholder="Your Name" class="name" id="name" />
-        </div>
-        
+    <div class="section">  
         <div class="chatHeader">Realtime Chat</div>
+
         <div class="content" id="content"></div>
+        
         <div class="chatFooter">
-            <input type="text" placeholder="Your Message" class="msgText" id="msg" />
-            <input type="submit" value=">" class="btnSend" id="btnSend" />
+            <div class="msg-container">
+                <input type="text" placeholder="Your Message" class="msgText" id="msg" />
+                
+                <input type="submit" value=">" class="btnSend" id="btnSend" />
+            </div>
+            <div>
+                <input type="text" placeholder="Your Name" class="name" id="name" />
+            </div>
         </div>
 </div>
 
-
-    <script src="js/index.js" type="module"></script>
+<script src="js/index.js" type="module"></script>
 </body>
 </html>
