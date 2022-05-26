@@ -323,14 +323,14 @@ color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>410</y>
+        <y>430</y>
         <width>311</width>
-        <height>111</height>
+        <height>91</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
-font: 50pt &quot;MS UI Gothic&quot;;</string>
+font: 25pt &quot;MS UI Gothic&quot;;</string>
       </property>
       <property name="text">
        <string/>
@@ -339,7 +339,7 @@ font: 50pt &quot;MS UI Gothic&quot;;</string>
      <widget class="QLineEdit" name="input">
       <property name="geometry">
        <rect>
-        <x>260</x>
+        <x>10</x>
         <y>370</y>
         <width>101</width>
         <height>31</height>
@@ -356,7 +356,7 @@ border-color: rgb(0, 0, 0);</string>
      <widget class="QPushButton" name="chutar">
       <property name="geometry">
        <rect>
-        <x>380</x>
+        <x>120</x>
         <y>380</y>
         <width>51</width>
         <height>21</height>
@@ -373,14 +373,31 @@ border-color: rgb(0, 0, 0);</string>
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>410</y>
+        <y>430</y>
         <width>311</width>
-        <height>111</height>
+        <height>91</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
-font: 50pt &quot;MS UI Gothic&quot;;</string>
+font: 25pt &quot;MS UI Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="acertadas">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>362</y>
+        <width>391</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+font: 25pt &quot;MS UI Gothic&quot;;</string>
       </property>
       <property name="text">
        <string/>
@@ -404,6 +421,7 @@ font: 50pt &quot;MS UI Gothic&quot;;</string>
      <zorder>input</zorder>
      <zorder>chutar</zorder>
      <zorder>resp</zorder>
+     <zorder>acertadas</zorder>
     </widget>
    </item>
   </layout>

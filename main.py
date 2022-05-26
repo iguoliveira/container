@@ -111,11 +111,11 @@ class MainWindow:
 
     firstTime = True
     word = {}
-    completedWord = []
     keys = []
     choosedWord = ''
     text = ''
     errorCount = 0
+    empty = []
     def guessWord(self):
         if self.firstTime:
             self.hangman.input.setHidden(False)
@@ -125,19 +125,19 @@ class MainWindow:
             self.choosedWord = self.keys[0]
             self.hangman.dica.setText(self.word[self.keys[0]])
             self.firstTime = False
+            for i in range(len(self.keys[0])):
+                self.empty.append("_")
+            self.hangman.acertadas.setText(" ".join(self.empty))
+
         else:
             letter = self.hangman.input.text()
-            if(self.verifyLetter(letter) or self.verifyLetter(letter) == "SIM"):
-                print(self.text)
-            else:
+            self.hangman.input.setText("")
+            result = self.verifyLetter(letter)
+
+            if not result:
                 self.errorCount += 1
 
             self.errorPrint(self.errorCount)
-            print(self.choosedWord)
-        # choosedWord = f[0]
-        # sel.hangman.dica.setText(self.returnWord[f[0]])
-        # letter = self.hangman.input.text()
-        # self.hangman.fundoAkainu.setHidden(True)
 
     def returnWord(self):
         words = [{"batata":"tuberculo"}, {"minecraft":"jogo"}, {"cachorro":"animal"}, {"gato":"animal"}, {"garrafa":"objeto"}, {"pistola":"arma"}]
@@ -145,30 +145,35 @@ class MainWindow:
 
     def verifyLetter(self, letter):
         count = 0
+
         for i in self.choosedWord:
             if letter == i:
-                for x in self.choosedWord:
-                    if x == letter:
-                        self.completedWord.append(letter)
+
+                for x in range(len(self.keys[0])):
+                    if self.keys[0][x] == letter:
+                        self.empty[x] = letter
+
                 self.choosedWord = self.choosedWord.replace(letter, "")
+                count -= 1
                 break
+
             else:
-                count +=1
+                count += 1
 
-        if self.won():
-            return "SIM"
-
-        if count >= len(self.choosedWord):
+        if count == len(self.choosedWord):
             return False
-        else:
-            print("ACERTO A LETRA")
+
+        elif len(self.choosedWord) == 0:
+            self.hangman.acertadas.setText(" ".join(self.empty))
+            self.hangman.dica.setText("VOCE GANHOU!")
+            self.hangman.resp.setText("")
+            self.hangman.chutar.setEnabled(False)
             return True
 
-    def won(self):
-        if len(self.choosedWord) == 0:
-            return True
         else:
-            return False
+            self.hangman.resp.setText("LETRA CORRETA")
+            self.hangman.acertadas.setText(" ".join(self.empty))
+            return True
 
     def errorPrint(self, value):
         if value == 1:
@@ -184,6 +189,10 @@ class MainWindow:
         elif value == 6:
             self.hangman.fundoPerna2.setHidden(True)
             self.hangman.fundoAkainu.setHidden(True)
+            self.hangman.acertadas.setText(" ".join(self.empty))
+            self.hangman.dica.setText("VOCE PERDEU =(")
+            self.hangman.resp.setText("A palavra era:\n" + self.keys[0])
+            self.hangman.chutar.setEnabled(False)
 
 if __name__ == '__main__':
     c = MainWindow()
