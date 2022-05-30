@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login-page/css/style.css">
+    <title>SmartConversation Login</title>
+</head>
+<body>
+    <section class="area-login">
+        <div class="login-elements">
+            <div><img src="login-page/img/Bosch-logo-7.png" alt=""></div>
+            
+            <!-- COM ISSO FUNCIONA O BGLH target="_blank" -->
+            <form action="/chat-page/chat.html" method="POST">
+                <div class="input-area"> 
+                    <input type="text" name="edv" placeholder="EDV" class="input-field" id="edv" autofocus>
+                    <input type="password" name="password" placeholder="Password" class="input-field" id="password">
+                    <input onclick="goToChat()" type="submit" value="Login" class="input-button">
+                </div>
+            </form>
+        
+            <div class="text-createAcc">Doesn't have a account? <a href="register-page/register.html">Sign In</a></div>
+        </div>
+    </section>
+
+    <script src="login-page/js/script.js"></script>
+</body>
+</html>
