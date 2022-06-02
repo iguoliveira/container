@@ -5,9 +5,9 @@ import Footer from './components/footer';
 export default function App() {
   return (
     <div className="App">
-      <Header/>
-      <Image/>
-      <Footer/>
+      <Header />
+      <Image />
+      <Footer />
     </div>
   );
 }

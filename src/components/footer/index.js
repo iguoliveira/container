@@ -31,7 +31,7 @@ export default function Footer(){
                 (result) => {
                     console.log(result)
                     setAvatarUrl(result.avatar_url)
-                    setName(result.login)
+                    setName(result.name)
                 },
                 (error) => {
                     console.log(error)
@@ -43,20 +43,23 @@ export default function Footer(){
         e.preventDefault()
         if(document.getElementById('projects').style.display == 'none'){
             document.getElementById('projects').style.display = 'block'
-            document.getElementById('basic-info').style.borderBottom = '2px solid whitesmoke'
-            document.getElementById('basic-info').style.marginTop = '5px'
+            document.getElementById('projects-container').style.width = '15%'
+            document.getElementById('header').style.fontSize = '2vh'
+            document.getElementById('header').innerHTML = 'Fechar'
         }
         else{
             document.getElementById('projects').style.display = 'none'
-            document.getElementById('header').style.borderBottom = '0px'
+            document.getElementById('projects-container').style.width = ''
+            document.getElementById('header').innerHTML = 'Projects'
+            document.getElementById('header').style.fontSize = '1.5em'
         }
         repoData()
     }
 
     return(
         <footer className='footer'>
-            <div className='personal-projects'>
-                <div className='personal-projects-header' id='header' onClick={ appearProjects }>My Projects</div>
+            <div className='personal-projects' id='projects-container'>
+                <div className='personal-projects-header' id='header' onClick={ appearProjects }>Projects</div>
                 <div className='personal-projects-list' id='projects'>
                     <div className='basic-info' id='basic-info'>
                         <img src={avatarUrl} className='avatar' id='avatar'/>
