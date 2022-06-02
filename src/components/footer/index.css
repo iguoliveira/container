@@ -8,13 +8,14 @@
 }
 
 .personal-projects{
-    margin-right: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 20px;
     background-color: #dd07a8;
     border-radius: 4px;
-    padding: 5px 10px;
+    padding: 5px 5px;
+    width: 15%;
 }
 
 .personal-projects-header{
@@ -32,23 +33,25 @@
     display: none;
 }
 
-.personal-projects-list div{
-    background-image: linear-gradient(90deg, white, whitesmoke);
-    background-size: 0% 2px;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    transition: background-size 500ms ease;
-    padding: 2px 5px;
-    margin-top: 8px;
+.basic-info{
+    display: flex;
+    align-items: center;
+    gap: 0.5vh;
 }
 
-.personal-projects-list a{
-    text-decoration: none;
+.basic-info .avatar{
+    max-height: 50px;
+}
+
+.basic-info .name{
+    font-size: 2vh;
     color: whitesmoke;
-    font-size: 1.05em;
     font-weight: bold;
 }
 
-.personal-projects-list div:hover{
-    background-size: 100% 2px;
+.repositories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.5vh;
 }
