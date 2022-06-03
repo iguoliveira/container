@@ -17,7 +17,7 @@ section{
 }
 
 .icon-image{
-    max-width: 100%;
+    max-width: 20vw;
     border-radius: 4px;
 }
 
@@ -27,7 +27,7 @@ section{
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     font-size: 2vw;
-    padding: 8px 0;
+    padding: 0.5vw 0;
     font-weight: bold;
     text-align: center;
     position: absolute;
@@ -45,13 +45,13 @@ section{
     background: -webkit-linear-gradient(45deg, #d90368, #6d9dc5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding: 5px 5px;
+    padding: 0 0.2vw;
     font-weight: bold;
 }
 
 .sub-text{
     text-align: left;
-    font-size: 2vw;
+    font-size: 1.25vw;
     background: -webkit-linear-gradient(45deg, #ffffff, #ee69a7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
