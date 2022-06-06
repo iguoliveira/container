@@ -1,25 +1,27 @@
-function goToChat(){
-    
-    let edv = document.getElementById("edv")
-    let pass = document.getElementById("password")
+function checkAnswer(){
+    event.preventDefault()
+    var edv = document.getElementById('edv')
+    var password = document.getElementById('password')
+    edvConfirm = false
+    passConfirm = false
+
+    if(password.value == ""){
+        passConfirm = true
+        password.style.border = "0"
+    }else{
+        password.style.border = "1px solid red"
+        passConfirm = false
+    }
 
     if(edv.value == ""){
-        event.preventDefault();
-        if(pass.value == ""){
-            pass.style.border = "1px solid red"
-        }else{
-            pass.style.border = "0"
-        }
-        edv.style.border = "1px solid red"
-    }
-
-    else if(pass.value == ""){
-        event.preventDefault();
+        edvConfirm = true
         edv.style.border = "0"
-        pass.style.border = "1px solid red"
+    }else{
+        edv.style.border = "1px solid red"
+        edvConfirm = false
     }
 
-    else{
-        window.location.href='/chat-page/chat.html';
+    if(edvConfirm && passConfirm){
+        location = './chat-page/chat.html'
     }
 }
