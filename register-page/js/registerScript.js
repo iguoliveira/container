@@ -42,5 +42,6 @@ function createDataStructure(fname, lname, email, edv, password){
 }
 
 function saveInDatabase(data){
+    alert("LOGIN WAS SUCCESSFUL!")
     push(ref(db, "login"),data)
 }
