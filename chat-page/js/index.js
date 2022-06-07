@@ -3,7 +3,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
 import { getDatabase, ref, push, remove, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
 export { app, db, dbRef }
 
-
 var firebaseConfig = {
     apiKey: "AIzaSyB4W9PiMVp2qjlcwimtK7155hk2Lh1l6Rw",
     authDomain: "smart-conversation-524.firebaseapp.com",
@@ -17,26 +16,30 @@ var firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
 const dbRef = ref(db, 'users');
+const dbRefe = ref(db, 'login');
 
 if(document.getElementById("msg") != null){
     document.getElementById("msg").addEventListener("keypress", ((event) => {
-        if(event.key === "Enter"){
-            if(document.getElementById("name").value != ""){
-                document.getElementById("name").setAttribute("readonly", "")
-                if(document.getElementById("msg").value != ""){
-                    if(document.getElementById("msg").value.length >= 2 && document.getElementById("msg").value.length <= 100){
-                        enviarMSG()
-                        document.getElementById("msg").value = ""
-                    }else{
-                        alert("Message with a wrong size! Reminder: min 2chars || max 100chars")
+        onValue(dbRefe, (snapshot) => {
+            snapshot.forEach(function (childSnapshot){
+                if(event.key === "Enter"){
+                    if(document.getElementById("name").value == childSnapshot.val().edv || document.getElementById("name").value == childSnapshot.val().name){
+                        document.getElementById("name").value = childSnapshot.val().name
+                        document.getElementById("name").setAttribute("readonly","")
+                        if(document.getElementById("msg").value != ""){
+                            if(document.getElementById("msg").value.length >= 2 && document.getElementById("msg").value.length <= 100){
+                                enviarMSG()
+                                document.getElementById("msg").value = ""
+                            }else{
+                                alert("Message with a wrong size! Reminder: min 2chars || max 100chars")
+                            }
+                        }else{
+                            alert("Send something, doesn't let in blank!")
+                        }
                     }
-                }else{
-                    alert("Send something, doesn't let in blank!")
                 }
-            }else{
-                alert("Tell us your name before you send a message")
-            }
-        }
+            })
+        })
     }))
 }
 
@@ -45,21 +48,26 @@ if(document.getElementById("msg") != null){
 // Check the fields and send the message with the click of the 'Send' button
 if(document.getElementById("btnSend") != null){
     document.getElementById("btnSend").addEventListener("click", (() => {
-        if(document.getElementById("name").value != ""){
-            document.getElementById("name").setAttribute("readonly", "")
-            if(document.getElementById("msg").value != ""){
-                if(document.getElementById("msg").value.length >= 2 && document.getElementById("msg").value.length <= 100){
-                    enviarMSG()
-                    document.getElementById("msg").value = ""
-                }else{
-                    alert("Message with a wrong size! Reminder: min 2chars || max 100chars")
+        onValue(dbRefe, (snapshot) => {
+            snapshot.forEach(function (childSnapshot){
+                if(event.key === "Enter"){
+                    if(document.getElementById("name").value == childSnapshot.val().edv){
+                        document.getElementById("name").value = childSnapshot.val().name
+                        document.getElementById("name").setAttribute("readonly","")
+                        if(document.getElementById("msg").value != ""){
+                            if(document.getElementById("msg").value.length >= 2 && document.getElementById("msg").value.length <= 100){
+                                enviarMSG()
+                                document.getElementById("msg").value = ""
+                            }else{
+                                alert("Message with a wrong size! Reminder: min 2chars || max 100chars")
+                            }
+                        }else{
+                            alert("Send something, doesn't let in blank!")
+                        }
+                    }
                 }
-            }else{
-                alert("Send something, doesn't let in blank!")
-            }
-        }else{
-            alert("Tell us your name before you send a message")
-        }
+            })
+        })
     }))
 }
 

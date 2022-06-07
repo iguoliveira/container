@@ -1,6 +1,6 @@
-import { app, db, dbRef } from "../../chat-page/js/index.js"
-import { getDatabase, ref, push, remove, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
-import { doc, setDoc } from "firebase/firestore"; 
+import { db } from "../../chat-page/js/index.js"
+import { ref, push } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+
 
 document.getElementById("submitBtn").onclick = (() =>{
     verifyInputs()
@@ -38,10 +38,9 @@ function createDataStructure(fname, lname, email, edv, password){
         edv: edv,
         password: password,
     }
-
     saveInDatabase(data)
 }
 
 function saveInDatabase(data){
-    await setDoc(doc(db, "users"),data)
+    push(ref(db, "login"),data)
 }
