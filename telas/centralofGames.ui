@@ -10,6 +10,12 @@
     <height>350</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>350</width>
+    <height>350</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
     <width>350</width>
@@ -51,7 +57,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>180</y>
+         <y>170</y>
          <width>91</width>
          <height>25</height>
         </rect>
@@ -77,7 +83,7 @@ border-radius:5px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>150</y>
+         <y>140</y>
          <width>81</width>
          <height>23</height>
         </rect>
@@ -103,7 +109,7 @@ border-radius:5px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>50</y>
+         <y>40</y>
          <width>203</width>
          <height>24</height>
         </rect>
@@ -125,8 +131,8 @@ font: 75 16pt &quot;Century Gothic&quot;;</string>
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>211</y>
+         <x>200</x>
+         <y>310</y>
          <width>121</width>
          <height>21</height>
         </rect>
@@ -143,6 +149,55 @@ font: 75 12pt &quot;Century Gothic&quot;;</string>
        </property>
        <property name="text">
         <string>IGOR OLIVEIRA</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnJokenpo">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>200</y>
+         <width>91</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 196, 254);
+border-radius:5px;</string>
+       </property>
+       <property name="text">
+        <string>JOKENPO</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>251</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+font: 75 8pt &quot;Century Gothic&quot;;</string>
+       </property>
+       <property name="text">
+        <string>You have only one chance for each. Be wise.</string>
        </property>
       </widget>
      </widget>

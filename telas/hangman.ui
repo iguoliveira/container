@@ -375,12 +375,12 @@ border-color: rgb(0, 0, 0);</string>
         <x>330</x>
         <y>430</y>
         <width>311</width>
-        <height>91</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
-font: 25pt &quot;MS UI Gothic&quot;;</string>
+font: 20pt &quot;MS UI Gothic&quot;;</string>
       </property>
       <property name="text">
        <string/>
@@ -398,6 +398,23 @@ font: 25pt &quot;MS UI Gothic&quot;;</string>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
 font: 25pt &quot;MS UI Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="letrasChutadas">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>480</y>
+        <width>311</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;MS UI Gothic&quot;;
+background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
        <string/>
@@ -422,6 +439,7 @@ font: 25pt &quot;MS UI Gothic&quot;;</string>
      <zorder>chutar</zorder>
      <zorder>resp</zorder>
      <zorder>acertadas</zorder>
+     <zorder>letrasChutadas</zorder>
     </widget>
    </item>
   </layout>
