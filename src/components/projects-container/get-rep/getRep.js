@@ -1,9 +1,20 @@
+import { useState } from 'react'
 import './getRep.css'
 
-export default function GetRep({ repName, description, url }){
+export default function GetRep({ repName, description, url, allReps }){
 
     function showRepData(){
         document.getElementById(repName).classList.toggle("show")
+        closeOthers(repName)
+    }
+
+    function closeOthers(value){
+        const nameClose = allReps.map((repos) => {
+            return document.getElementById(repos).classList.contains("show") && repos != value ?
+                document.getElementById(repos).classList.toggle("show")
+                :
+                console.log(repos)
+        })
     }
 
     return(

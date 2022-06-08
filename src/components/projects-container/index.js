@@ -11,13 +11,14 @@ export default function ProjectsContainer(){
     const [repos, setRepos] = useState()
 
     async function repoData(){
+        const names = []
         await fetch("https://api.github.com/users/iguoliveira/repos")
             .then((res) => res.json())
             .then(
                 (result) => {
-                    console.log(36, result)
                     const list = result.map((items) => (
-                        <GetRep repName={items.name} description={items.description} url={items.html_url} />
+                        names.push(items.name),
+                        <GetRep repName={items.name} description={items.description} url={items.html_url} allReps={names}/>
                     ))
                     setRep(list)
                 },
@@ -32,7 +33,6 @@ export default function ProjectsContainer(){
             .then((res) => res.json())
             .then(
                 (result) => {
-                    console.log(result)
                     setAvatarUrl(result.avatar_url)
                     setName(result.login)
                     setBio(result.bio)
@@ -66,7 +66,6 @@ export default function ProjectsContainer(){
                             <div className='main-rep-count'><b>Public Repositories:</b> {repos}</div>
                         </div>
                     </div>
-
                 </div>
 
                 <div className='projects-list'>
