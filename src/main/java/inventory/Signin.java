@@ -4,8 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
 
-public class Signin {
+public class Signin{
         JFrame frame;
 
         JPanel input_container;
@@ -42,7 +43,7 @@ public class Signin {
             password_input.setPreferredSize(new Dimension(225, 25));
             input_container.add(password_input);
 
-            signin = new JButton("Signin");
+            signin = new JButton("Sign In");
             signin.setForeground(Color.WHITE);
             signin.setBackground(Color.decode("#632218"));
             signin.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
@@ -50,7 +51,12 @@ public class Signin {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     if(e.getSource() == signin){
-
+                        if(!username_input.getText().equals("")){
+                            if(!password_input.getText().equals("")){
+                                Log.addToLog("Usuario " + username_input.getText() + " se cadastrou as " + LocalDateTime.now() + "\n");
+                                Usuario.cadastrarUsuario(username_input.getText(), password_input.getText());
+                            }
+                        }
                     }
                 }
             });

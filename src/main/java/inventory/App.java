@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.time.LocalDateTime;
 
 public class App {
 
@@ -21,6 +23,8 @@ public class App {
     JButton login;
 
     App(){
+        Log.addToLog("Programa iniciado as "+ LocalDateTime.now() + "\n");
+
         frame = new JFrame();
         frame.setTitle("Login");
         frame.setSize(250,200);
@@ -44,7 +48,7 @@ public class App {
         password_input.setPreferredSize(new Dimension(225, 25));
         input_container.add(password_input);
 
-        signin = new JButton("Signin");
+        signin = new JButton("Sign In");
         signin.setForeground(Color.WHITE);
         signin.setBackground(Color.decode("#632218"));
         signin.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
@@ -52,16 +56,32 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == signin){
-                    Signin signin = new Signin();
+                    Signin signin_user = new Signin();
                 }
             }
         });
+
         input_container.add(signin);
 
         login = new JButton("Login");
         login.setForeground(Color.WHITE);
         login.setBackground(Color.decode("#632218"));
         login.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        login.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == login){
+                    try {
+                        if(Usuario.isUserRegistered(username_input.getText(), password_input.getText())){
+                            Log.addToLog("Usuario " + username_input.getText() + " logou no sistema as " + LocalDateTime.now() + "\n");
+                            MenuOptions menu = new MenuOptions();
+                        }
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
         input_container.add(login);
 
         frame.setVisible(true);

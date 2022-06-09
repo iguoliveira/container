@@ -1,10 +1,13 @@
 package inventory;
-//VIDEO SOBRE JSON - https://www.youtube.com/watch?v=s6QtjCKq_wA
 
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Main {
 
-    public static void main(String[] args) {
-	    inventory.App app = new inventory.App();
+    public static void main(String[] args) throws IOException {
+        App app = new App();
     }
 }
