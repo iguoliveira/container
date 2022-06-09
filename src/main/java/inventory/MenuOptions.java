@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.time.LocalDateTime;
 
 public class MenuOptions extends JFrame{
 
@@ -16,7 +18,8 @@ public class MenuOptions extends JFrame{
 
     MenuOptions(){
         this.setTitle("Menu Options");
-        this.setSize(350,300);
+        this.setSize(200,200);
+        this.setLocationRelativeTo(null);
         this.setResizable(false);
 
         panel = new JPanel();
@@ -45,7 +48,12 @@ public class MenuOptions extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == listProduct){
-                    ListProducts list = new ListProducts();
+                    Log.addToLog("All products was listed at " + LocalDateTime.now() + "\n");
+                    try {
+                        ListProducts list = new ListProducts();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 }
             }
         });
@@ -59,7 +67,11 @@ public class MenuOptions extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == editProduct){
-                    EditProducts edit = new EditProducts();
+                    try {
+                        EditProducts edit = new EditProducts();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 }
             }
         });
@@ -69,6 +81,18 @@ public class MenuOptions extends JFrame{
         rmvProduct.setForeground(Color.WHITE);
         rmvProduct.setBackground(Color.decode("#632218"));
         rmvProduct.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        rmvProduct.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == rmvProduct){
+                    try {
+                        RemoveProducts rmv = new RemoveProducts();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
         panel.add(rmvProduct);
 
         this.setVisible(true);

@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.time.LocalDateTime;
 
 public class EditProducts extends JFrame {
     JPanel panel;
@@ -18,31 +20,28 @@ public class EditProducts extends JFrame {
 
     JButton submit;
 
-    EditProducts(){
+    EditProducts() throws IOException {
         this.setTitle("Edit Product");
-        this.setSize(250, 200);
+        this.setSize(300,250);
+        this.setLocationRelativeTo(null);
         this.setResizable(false);
 
         panel = new JPanel();
         panel.setLayout(new FlowLayout());
         this.add(panel);
 
-//        products = new JTextArea();
-//        products.setText(""+Produto.alterarProduto());
-//        panel.add(products);
-
-        name_label = new JLabel("Quantity");
+        name_label = new JLabel("Name of the Product");
         panel.add(name_label);
 
         name_input = new JTextField();
-        name_input.setPreferredSize(new Dimension(225, 25));
+        name_input.setPreferredSize(new Dimension(250, 25));
         panel.add(name_input);
 
-        qtd_label = new JLabel("Index");
+        qtd_label = new JLabel("Quantity");
         panel.add(qtd_label);
 
         qtd_input = new JTextField();
-        qtd_input.setPreferredSize(new Dimension(225, 25));
+        qtd_input.setPreferredSize(new Dimension(250, 25));
         panel.add(qtd_input);
 
         submit = new JButton("Edit Product");
@@ -53,11 +52,18 @@ public class EditProducts extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == submit){
-                    Produto.changeQtdProduct(Integer.parseInt(qtd_input.getText()), name_input.getText());
+                    Log.addToLog("Product " + name_input.getText()+" had been edited at " + LocalDateTime.now() + "\n");
+                    Produto.changeQtdProduct(name_input.getText(), qtd_input.getText());
+                    name_input.setText("");
+                    qtd_input.setText("");
                 }
             }
         });
         panel.add(submit);
+
+        products = new JTextArea();
+        products.setText(""+Produto.printRight(Produto.getItemsFromTxt()));
+        panel.add(products);
 
         this.setVisible(true);
     }

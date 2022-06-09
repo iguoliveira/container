@@ -11,6 +11,8 @@ public class Signin{
 
         JPanel input_container;
 
+        JTextArea confirmation;
+
         JLabel username_label;
         JTextField username_input;
 
@@ -23,11 +25,16 @@ public class Signin{
             frame = new JFrame();
             frame.setTitle("Register");
             frame.setSize(250,200);
+            frame.setLocationRelativeTo(null);
             frame.setResizable(false);
 
             input_container = new JPanel();
             input_container.setLayout(new FlowLayout());
             frame.add(input_container);
+
+            confirmation = new JTextArea("");
+            confirmation.setEditable(false);
+            input_container.add(confirmation);
 
             username_label = new JLabel("Username");
             input_container.add(username_label);
@@ -53,8 +60,11 @@ public class Signin{
                     if(e.getSource() == signin){
                         if(!username_input.getText().equals("")){
                             if(!password_input.getText().equals("")){
-                                Log.addToLog("Usuario " + username_input.getText() + " se cadastrou as " + LocalDateTime.now() + "\n");
+                                Log.addToLog("Usuario " + username_input.getText() + " had registered in " + LocalDateTime.now() + "\n");
+                                confirmation.setText("USER " + username_input.getText() + " has been registered!");
                                 Usuario.cadastrarUsuario(username_input.getText(), password_input.getText());
+                                username_input.setText("");
+                                password_input.setText("");
                             }
                         }
                     }

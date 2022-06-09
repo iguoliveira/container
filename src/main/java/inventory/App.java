@@ -23,11 +23,12 @@ public class App {
     JButton login;
 
     App(){
-        Log.addToLog("Programa iniciado as "+ LocalDateTime.now() + "\n");
+        Log.addToLog("Program Start at "+ LocalDateTime.now() + "\n");
 
         frame = new JFrame();
         frame.setTitle("Login");
         frame.setSize(250,200);
+        frame.setLocationRelativeTo(null);
         frame.setResizable(false);
 
         input_container = new JPanel();
@@ -73,7 +74,7 @@ public class App {
                 if(e.getSource() == login){
                     try {
                         if(Usuario.isUserRegistered(username_input.getText(), password_input.getText())){
-                            Log.addToLog("Usuario " + username_input.getText() + " logou no sistema as " + LocalDateTime.now() + "\n");
+                            Log.addToLog("User " + username_input.getText() + " had login in the system at " + LocalDateTime.now() + "\n");
                             MenuOptions menu = new MenuOptions();
                         }
                     } catch (IOException ex) {

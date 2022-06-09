@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
 
 public class addProduct extends JFrame {
     JPanel panel;
@@ -18,6 +19,7 @@ public class addProduct extends JFrame {
     addProduct(){
         this.setTitle("Add Product");
         this.setSize(250,200);
+        this.setLocationRelativeTo(null);
         this.setResizable(false);
 
         panel = new JPanel();
@@ -46,7 +48,10 @@ public class addProduct extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == submit){
+                    Log.addToLog("Product " + input_name.getText() + " had been added at " + LocalDateTime.now() + "\n");
                     Produto.addProduct(input_name.getText(), input_qtd.getText());
+                    input_name.setText("");
+                    input_qtd.setText("");
                 }
             }
         });

@@ -4,16 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Usuario {
-    private String login;
-    private String senha;
-
     Usuario(){}
 
-    Usuario(String login, String senha){
-        this.login = login;
-        this.senha = senha;
-
-    }
     public static void cadastrarUsuario(String login, String senha) {
         txtFormatation.saveUserData(login, senha);
     }
