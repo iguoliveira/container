@@ -22,17 +22,41 @@
 
 .crud-container{
     text-align: center;
-    background-color: gray;
+    background-color: rgb(219, 219, 219);
     padding: 10px;
     border-radius: 5px;
-    width: 30%;
+    width: 20%;
 }
 
 .header-container{
     font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: underline;
 }
 
 .inputs-list-container{
+    gap: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.input-container{
+    width: 50%;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+.input-container:focus{
+    outline: none;
+    border-bottom: 1px solid rgb(0, 102, 255);
+}
+
+.button-container{
+    margin-top: 210px;
+    border: 0;
+    background-color: rgb(0, 102, 255);
+    padding: 5px 10px;
 }
