@@ -1,10 +1,7 @@
-import { Link } from "react-router-dom";
+import Mainpage from "./routes/mainpage"
 
 export default function App() {
   return (
-    <div className="App">
-      <div>Bala</div>
-      <Link to="/about">About us</Link>
-    </div>
+    <Mainpage />
   );
 }
