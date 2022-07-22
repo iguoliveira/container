@@ -25,16 +25,17 @@ export default function Navbar() {
 }
 
 const Container = styled.div`
-  background-color: #f8f8f8;
-  padding: 10px;
+  background-color: #6D597A;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   .link {
     text-decoration: none;
-    color: black;
+    color: white;
     cursor: pointer;
+    font-size: 1.1em;
 
     &:hover {
       color: #585858;
@@ -44,7 +45,7 @@ const Container = styled.div`
 `;
 
 const Logo = styled.div`
-  font-size: 1.2em;
+  font-size: 1.25em;
 `;
 
 const LinksContainer = styled.div`
