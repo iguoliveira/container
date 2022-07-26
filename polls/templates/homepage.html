@@ -21,6 +21,10 @@
         </div>
     </nav>
 
+    {% for d in person_info %}
+        <div>{{ d.id }}. {{ d.name }} - {{ d.age }}</div>
+    {% endfor %}
+
     <content class="container">
         <div class="crud-container">
             <div class="header-container">
