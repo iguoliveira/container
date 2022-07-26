@@ -1,45 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style.css" />
     <title>HOMEPAGE</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
+      <div>
+        <a href="" class="navbar-logo"> BASICRUD </a>
+      </div>
+      <div class="navbar-items">
+        <div>ABOUT US</div>
+        <div>CONTACT</div>
         <div>
-            <a href="" class="navbar-logo">
-                BASICRUD
-            </a>
+          <a href="https://github.com/iguoliveira" target="_blank">GITHUB</a>
         </div>
-        <div class="navbar-items">
-            <div>ABOUT US</div>
-            <div>CONTACT</div>
-            <div><a href="https://github.com/iguoliveira" target="_blank">GITHUB</a></div>
-        </div>
+      </div>
     </nav>
 
-    {% for d in person_info %}
-        <div>{{ d.id }}. {{ d.name }} - {{ d.age }}</div>
-    {% endfor %}
-
     <content class="container">
-        <div class="crud-container">
-            <div class="header-container">
-                CRUD
-            </div>
-            <div class="inputs-list-container">
-                <input type="text" class="input-container" placeholder="Name">
-                <input type="text" class="input-container" placeholder="Age">
-                <input type="text" class="input-container" placeholder="Sex">
-            </div>
-            <div>
-                <button class="button-container">Submit</button>
-            </div>
+      <div class="crud-container">
+        <div class="header-container">CRUD</div>
+        <div class="inputs-list-container">
+          <input type="text" class="input-container" placeholder="Name" />
+          <input type="text" class="input-container" placeholder="Age" />
+          <input type="text" class="input-container" placeholder="Sex" />
         </div>
+        <div class="buttons-area">
+          <button class="button-container">Submit</button>
+          <a href="list/" class="a-container">List</a>
+        </div>
+      </div>
     </content>
-    
-</body>
+  </body>
 </html>
