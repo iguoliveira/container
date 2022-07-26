@@ -5,3 +5,6 @@ class Person(models.Model):
     name = models.CharField(max_length=300)
     age = models.SmallIntegerField()
     sex = models.CharField(max_length=1)
+
+    def __str__(self):
+        return self.name
