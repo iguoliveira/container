@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export default function Links(props) {
   return (
-    <main>
+    <>
       <NavLinks href={props.link} target="_blank">
         {props.linkName}
       </NavLinks>
-    </main>
+    </>
   );
 }
 
