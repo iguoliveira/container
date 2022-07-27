@@ -13,4 +13,8 @@ const InputArea = styled.input`
   &::placeholder {
     text-align: center;
   }
+
+  &:hover {
+    border-bottom: 1px solid #744eaa;
+  }
 `;

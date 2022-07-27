@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export default function Links(props) {
-  return <NavLinks>{props.linkName}</NavLinks>;
+  return <NavLinks href={props.link} target={"_blank"}>{props.linkName}</NavLinks>;
 }
 
-const NavLinks = styled.div`
+const NavLinks = styled.a`
   text-decoration: none;
   color: white;
   cursor: pointer;
