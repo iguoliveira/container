@@ -16,7 +16,9 @@ export default function Mainpage() {
 }
 
 const ContainerBlock = styled.div`
+  width: 100%;
   position: absolute;
+  z-index: 0;
   top: 0px;
   right: 0px;
   bottom: 0px;

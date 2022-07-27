@@ -1,23 +1,16 @@
 import styled from "styled-components";
 
 export default function Links(props) {
-  return (
-    <>
-      <NavLinks href={props.link} target="_blank">
-        {props.linkName}
-      </NavLinks>
-    </>
-  );
+  return <NavLinks>{props.linkName}</NavLinks>;
 }
 
-const NavLinks = styled.a`
+const NavLinks = styled.div`
   text-decoration: none;
   color: white;
   cursor: pointer;
+  font-size: 1em;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 0.9em;
-
   &:hover {
     color: #cacaca;
     transition: 200ms;

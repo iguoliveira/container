@@ -6,25 +6,33 @@ export default function Navbar() {
   return (
     <Container>
       <Link to="/" className="link">
-        <Logo>CEP</Logo>
+        CEP
       </Link>
-      <Links link="https://github.com/iguoliveira" linkName="Github" />
+      <LinkItems>
+        <Links link="https://github.com/iguoliveira" linkName="Github" />
+      </LinkItems>
     </Container>
   );
 }
 
 const Container = styled.div`
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  padding: 20px 0px;
   background-color: #744eaa;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
   .link {
     text-decoration: none;
     color: white;
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1.5em;
+    margin-left: 20px;
 
     &:hover {
       color: #cacaca;
@@ -33,8 +41,6 @@ const Container = styled.div`
   }
 `;
 
-const Logo = styled.div`
-  font-size: 1.25em;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+const LinkItems = styled.div`
+  margin-right: 20px;
 `;
