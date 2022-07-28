@@ -68,4 +68,12 @@ section{
 .courses-list a{
     text-decoration: none;
     color: rgb(136, 8, 175);
+    font-size: 1.1em;
+}
+
+.course-items{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
