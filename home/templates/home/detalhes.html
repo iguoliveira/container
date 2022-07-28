@@ -4,16 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
+    <title>Document</title>
   </head>
-
   <body>
-    <div>ESCOLA</div>
-    {% for c in curso %}
-    <div>
-      <a href="{% url 'detalhes' c.id %}">{{c.id}}. </a>{{c.nome}} - {{c.preco}}
-    </div>
-    {% endfor %}
-    <a href="admin/">Go to admin page</a>
+    <div>DETALHES</div>
+    <div>{{detalhe.nome}} - {{detalhe.descricao}} - {{detalhe.preco}}</div>
+    <a href="/">Return to home</a>
   </body>
 </html>
