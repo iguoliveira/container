@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: rgb(32, 32, 32);
+}
+.navbar{
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(136, 8, 175);
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-title{
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+
+.navbar-links{
+    display: flex;
+    gap: 15px;
+    margin-right: 20px;
+}
+
+.navbar-links a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-links a:hover{
+    color: rgb(175, 175, 175);
+    transition: 200ms;
+}
+
+section{
+    z-index: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.courses-container{
+    background-color: rgb(228, 249, 255);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.courses-header{
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+
+.courses-list{
+    margin-top: 20px;
+}
+
+.courses-list a{
+    text-decoration: none;
+    color: rgb(136, 8, 175);
+}
