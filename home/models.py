@@ -6,8 +6,8 @@ from django.forms import CharField
 
 
 class Curso(models.Model):
-    nome = models.CharField(default=50)
-    descricao = models.CharField(default=200)
+    nome = models.CharField(max_length=50)
+    descricao = models.CharField(max_length=200)
     preco = models.DecimalField(max_digits=10, decimal_places=2)
     ativo = models.BooleanField()
 
