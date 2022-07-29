@@ -6,13 +6,15 @@ export default function Button(props) {
 
 const Btn = styled.button`
   background-color: #744EAA;
-  width: 72px;
-  height: 24px;
+  width: 100%;
+  padding: 10px;
   border: 0;
   color: white;
   cursor: pointer;
+  border-radius: 4px;
 
   &:hover{
-    box-shadow: 1px 1px 0px black;
+    box-shadow: 3px 4px 0 black;
+    transition: 120ms ease-in-out;
   }
 `;

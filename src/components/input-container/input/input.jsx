@@ -1,20 +1,10 @@
-import styled from "styled-components";
-import "./input.css";
+import "./input.scss";
 
 export default function Input(props) {
-  return <InputArea placeholder={props.name} className={props.width} />;
+  return (
+    <label className="input">
+      <input className="input__field" type="text" placeholder="" />
+      <span className="input__label">{props.name}</span>
+    </label>
+  );
 }
-
-const InputArea = styled.input`
-  background-color: transparent;
-  border: 0;
-  border-bottom: 1px solid black;
-
-  &::placeholder {
-    text-align: center;
-  }
-
-  &:hover {
-    border-bottom: 1px solid #744eaa;
-  }
-`;
