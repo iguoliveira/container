@@ -9,7 +9,7 @@
   </head>
   <body>
     {% for d in person %}
-    <div>{{ d.id }}. {{ d.name }} - {{ d.age }} - {{ d.sex }}</div>
+    <div>{{ d.id }}. {{ d.name }} - {{ d.age }} - {{ d.sex }} <img src="{{ d.image.small.url }}"></div>
     {% endfor %}
     <a href="/" class="a-container">Return</a>
   </body>

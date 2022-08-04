@@ -21,11 +21,13 @@ def salvar_poli(request):
         name = request.POST.get('name')
         age = request.POST.get('age')
         sex = request.POST.get('sex')
+        image = request.POST.get('image')
 
         pessoa = Person.objects.create(
             name = name,
             age = age,
-            sex = sex
+            sex = sex,
+            image = image,
         )
 
         pessoa.save()
