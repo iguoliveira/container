@@ -1,6 +1,7 @@
 import Logo from '/logo.png'
 import { Hamburguer } from './Hamburger';
 import { Links } from './Links';
+import { Link } from "react-router-dom"
 
 export const Navbar = () => {
   return (
@@ -11,9 +12,9 @@ export const Navbar = () => {
         </div>
         <Hamburguer />
         <div className='DESKTOP-MENU hidden space-x-8 lg:flex'>
-          <Links name="Homepage" />
-          <Links name="Tier List" />
-          <Links name="Chars" />
+          <Link to="/"><Links name="Homepage" /></Link>
+          <Link to="/tierList/"><Links name="Tier List" /></Link>
+          <Link to="/charsList/"><Links name="Chars List" /></Link>
         </div>
       </div>
     </div>
