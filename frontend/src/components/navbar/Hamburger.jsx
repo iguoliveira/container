@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Links } from './Links';
+import { Link } from "react-router-dom"
 
 export const Hamburguer = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -35,13 +36,13 @@ export const Hamburguer = () => {
         </div>
         <ul className="flex flex-col items-center justify-between min-h-[250px]">
           <li className="border-b border-gray-400 my-8 uppercase">
-            <Links name="Homepage" />
+            <Link to="/"><Links name="Homepage" /></Link>
           </li>
           <li className="border-b border-gray-400 my-8 uppercase">
-            <Links name="Tier List" />
+            <Link to="/tierList/"><Links name="Tier List" /></Link>
           </li>
           <li className="border-b border-gray-400 my-8 uppercase">
-            <Links name="Chars" />
+            <Link to="/charsList/"><Links name="Chars List" /></Link>
           </li>
         </ul>
       </div>
