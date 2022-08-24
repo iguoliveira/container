@@ -1,14 +1,19 @@
+import Logo from '/logo.png'
+import { Hamburguer } from './Hamburger';
+import { Links } from './Links';
+
 export const Navbar = () => {
   return (
-    <div className="w-screen bg-pink-500 py-10">
-      <div className="flex justify-between px-10">
+    <div className="w-screen bg-mainColor py-5">
+      <div className="flex justify-between items-center px-5">
         <div>
-          <div>logo</div>
+          <img className="w-16" src={Logo} />
         </div>
-        <div className="flex">
-          <div>LINKS 1</div>
-          <div>LINKS 2</div>
-          <div>LINKS 3</div>
+        <Hamburguer />
+        <div className='DESKTOP-MENU hidden space-x-8 lg:flex'>
+          <Links name="Homepage" />
+          <Links name="Tier List" />
+          <Links name="Chars" />
         </div>
       </div>
     </div>
