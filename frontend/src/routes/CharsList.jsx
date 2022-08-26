@@ -25,6 +25,7 @@ export const CharsList = () => {
             <div className="p-5 w-screen flex flex-wrap justify-center gap-2">
                 {apiresult.map((item, index) => (
                     <div key={index} className="w-[45%]">
+                        {console.log(item.photo)}
                         <CharCard  photo={item.photo} name={item.name} rank={item.rank} position={item.position} gender={item.gender} race={item.race} />
                     </div>
                 ))}

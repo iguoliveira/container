@@ -1,5 +1,7 @@
+from distutils.command.upload import upload
 from django.db import models
 from uuid import uuid4
+from stdimage import StdImageField, JPEGField
 
 # Create your models here.
 
@@ -14,3 +16,4 @@ class Heroes(models.Model):
     race = models.CharField(max_length=255)
     gender = models.CharField(max_length=1)
     photo = models.ImageField(upload_to=heroeFile, max_length=254, blank=True, null=True)
+    photo = StdImageField(upload_to='%y/%m/%d')
