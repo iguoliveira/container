@@ -10,5 +10,4 @@ class HeroesSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Heroes
         fields = '__all__'
-
-        
+    
