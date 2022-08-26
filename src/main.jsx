@@ -7,7 +7,6 @@ import { TierList } from "./routes/TierList"
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
@@ -15,5 +14,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/charsList/" element={<CharsList />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
 )
