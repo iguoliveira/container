@@ -39,7 +39,9 @@ export const CharsList = () => {
       </div>
       <div>
         {rankApi.map((item, index) => (
-          <div key={index}>{item.rank}</div>
+          <div key={index}>
+            {item.rank}
+          </div>
         ))}
       </div>
       <div>{apiresult.name}</div>
@@ -47,12 +49,15 @@ export const CharsList = () => {
         {apiresult.map((item, index) => (
           <div key={index} className="w-[45%]">
             <CharCard
-              photo={item.photo}
               name={item.name}
+              photo={item.photo}
+              heroe_name={item.heroe_name}
+              age = {item.age}
               rank={item.fk_rank.rank}
               position={item.position}
               gender={item.gender}
               race={item.race}
+              status={item.status}
             />
           </div>
         ))}
