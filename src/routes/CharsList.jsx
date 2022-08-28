@@ -5,6 +5,7 @@ import { Navbar } from "../components/navbar/Navbar";
 
 export const CharsList = () => {
   const [apiresult, setApiresult] = useState([]);
+  const [rankApi, setRankApi] = useState([])
   const [helper, setHelper] = useState("")
 
   const fetchApi = () => {
@@ -21,6 +22,7 @@ export const CharsList = () => {
         setApiresult(newdata)
       })
     );
+    fetch("http://localhost:8000/ranks/").then((res) => res.json().then((data) => {setRankApi(data)}))
   };
 
   useEffect(() => {
@@ -38,6 +40,11 @@ export const CharsList = () => {
       <Navbar />
       <div className="bg-black text-white uppercase text-center py-2 text-2xl">
         characters list
+      </div>
+      <div>
+        {rankApi.map((item, index) => (
+          <div>{item.rank}</div>
+        ))}
       </div>
       <div>{apiresult.name}</div>
       <div className="p-5 w-screen flex flex-wrap justify-center gap-2">
