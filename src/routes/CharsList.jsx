@@ -29,10 +29,6 @@ export const CharsList = () => {
     fetchApi();
   }, []);
 
-  useEffect(() =>{
-    console.log(apiresult)
-  },[apiresult])
-
   useEffect(() => {}, [helper])
 
   return (
@@ -43,7 +39,7 @@ export const CharsList = () => {
       </div>
       <div>
         {rankApi.map((item, index) => (
-          <div>{item.rank}</div>
+          <div key={index}>{item.rank}</div>
         ))}
       </div>
       <div>{apiresult.name}</div>
