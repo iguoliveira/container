@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { CharCard } from "../components/card/CharCard";
 import { Navbar } from "../components/navbar/Navbar";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const CharsList = () => {
+  let navigate = useNavigate();
+
   const [apiresult, setApiresult] = useState([]);
   const [rankApi, setRankApi] = useState([]);
   const [helper, setHelper] = useState("");
@@ -49,7 +51,11 @@ export const CharsList = () => {
             key={index}
             className="bg-gray-700 px-4 py-2 rounded uppercase font-bold"
           >
-            <Link to={"/charsList/" + item.rank}>{item.rank}</Link>
+            <button onClick={() => {
+              navigate(item.rank)
+            }}>
+              {item.rank}
+            </button>
           </div>
         ))}
       </div>
