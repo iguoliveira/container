@@ -26,7 +26,7 @@ export const CharCard = (props) => {
             ALIVE
           </div>
         ) : (
-          <div className="bg-red-500">DEAD</div>
+          <div className="bg-red-500 text-center uppercase text-lg rounded-b-xl">DEAD</div>
         )}
       </div>
     </div>
