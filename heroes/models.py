@@ -13,7 +13,10 @@ class Rank(models.Model):
 
 class Heroes(models.Model):
     id_heroe = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    heroe_name = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
+    age = models.IntegerField()
+    status = models.BooleanField()
     position = models.IntegerField()
     fk_rank = models.ForeignKey(Rank, on_delete=models.PROTECT)
     race = models.CharField(max_length=255)
