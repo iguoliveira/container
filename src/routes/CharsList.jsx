@@ -2,10 +2,11 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { CharCard } from "../components/card/CharCard";
 import { Navbar } from "../components/navbar/Navbar";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export const CharsList = () => {
   let navigate = useNavigate();
+  let { rank } = useParams("");
 
   const [apiresult, setApiresult] = useState([]);
   const [rankApi, setRankApi] = useState([]);
@@ -53,7 +54,7 @@ export const CharsList = () => {
           >
             <button
               onClick={() => {
-                navigate(item.rank);
+                navigate("/charsList/" + item.rank + "/");
               }}
             >
               {item.rank}
@@ -63,22 +64,25 @@ export const CharsList = () => {
       </div>
       <div>{apiresult.name}</div>
       <div className="p-5 w-screen flex flex-wrap justify-center gap-2">
-        {apiresult.map((item, index) => (
-          item.fk_rank.rank
-          <div key={index} className="w-[45%]">
-            <CharCard
-              name={item.name}
-              photo={item.photo}
-              heroe_name={item.heroe_name}
-              age={item.age}
-              rank={item.fk_rank.rank}
-              position={item.position}
-              gender={item.gender}
-              race={item.race}
-              status={item.status}
-            />
-          </div>
-        ))}
+        {apiresult.map((item, index) =>
+          item.fk_rank.rank == rank ? (
+            <div key={index} className="w-[45%]">
+              <CharCard
+                name={item.name}
+                photo={item.photo}
+                heroe_name={item.heroe_name}
+                age={item.age}
+                rank={item.fk_rank.rank}
+                position={item.position}
+                gender={item.gender}
+                race={item.race}
+                status={item.status}
+              />
+            </div>
+          ) : (
+            console.log("")
+          )
+        )}
       </div>
     </>
   );
