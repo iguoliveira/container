@@ -1,7 +1,7 @@
 export const ErrorPage = () => {
     return(
         <div>
-            PAGE NOT FOUND
+            ERROR 404 - PAGE NOT FOUND
         </div>
     )
 }

@@ -51,9 +51,11 @@ export const CharsList = () => {
             key={index}
             className="bg-gray-700 px-4 py-2 rounded uppercase font-bold"
           >
-            <button onClick={() => {
-              navigate(item.rank)
-            }}>
+            <button
+              onClick={() => {
+                navigate(item.rank);
+              }}
+            >
               {item.rank}
             </button>
           </div>
@@ -62,6 +64,7 @@ export const CharsList = () => {
       <div>{apiresult.name}</div>
       <div className="p-5 w-screen flex flex-wrap justify-center gap-2">
         {apiresult.map((item, index) => (
+          item.fk_rank.rank
           <div key={index} className="w-[45%]">
             <CharCard
               name={item.name}
