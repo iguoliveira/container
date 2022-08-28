@@ -6,7 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 export const CharsList = () => {
   let navigate = useNavigate();
-  let { rank } = useParams("");
+  let { rank } = useParams();
 
   const [apiresult, setApiresult] = useState([]);
   const [rankApi, setRankApi] = useState([]);
@@ -48,18 +48,19 @@ export const CharsList = () => {
       </div>
       <div className="flex justify-center bg-black text-white space-x-10 py-4">
         {rankApi.map((item, index) => (
-          <div
+          <button
             key={index}
-            className="bg-gray-700 px-4 py-2 rounded uppercase font-bold"
+            onClick={() => {
+              navigate("/charsList/" + item.rank + "-class/");
+            }}
           >
-            <button
-              onClick={() => {
-                navigate("/charsList/" + item.rank + "/");
-              }}
+            <div
+              key={index}
+              className="bg-gray-700 px-4 py-2 rounded uppercase font-bold"
             >
               {item.rank}
-            </button>
-          </div>
+            </div>
+          </button>
         ))}
       </div>
       <div>{apiresult.name}</div>

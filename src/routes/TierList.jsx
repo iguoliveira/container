@@ -1,5 +1,9 @@
+import { Navbar } from "../components/navbar/Navbar"
+
 export const TierList = () => {
     return(
-        <div>TIER LIST</div>
+        <div>
+            <Navbar />
+        </div>
     )
 }

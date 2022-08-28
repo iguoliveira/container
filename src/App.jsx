@@ -12,7 +12,7 @@ export const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/tierList/" element={<TierList />} />
         <Route path="/charsList/" element={<CharsList />} />
-        <Route path="/charsList/:rank/" element={<CharsList />} />
+        <Route path="/charsList/:rank-class/" element={<CharsList />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
