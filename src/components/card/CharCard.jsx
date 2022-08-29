@@ -1,7 +1,7 @@
 export const CharCard = (props) => {
   return (
     <div>
-      <div className="bg-gray-800 text-white w-full h-full rounded-t-xl p-5">
+      <div className="bg-gray-800 text-white w-full h-full p-5">
         <div className="text-center uppercase font-bold">{props.name}</div>
         <div className="flex justify-center">
           {props.rank == "S" ? (

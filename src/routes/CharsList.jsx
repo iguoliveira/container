@@ -12,7 +12,6 @@ export const CharsList = () => {
   const [apiresult, setApiresult] = useState([]);
   const [rankApi, setRankApi] = useState([]);
   const [helper, setHelper] = useState("");
-  const [deleteStatus, setDeleteStatus] = useState("nao deu");
 
   const fetchApi = () => {
     fetch("http://localhost:8000/heroes").then((res) =>
@@ -39,8 +38,7 @@ export const CharsList = () => {
   const deleteHero = (index) => {
     fetch("http://localhost:8000/heroes/" + index, {
       method: 'DELETE'
-    }).then(() => setDeleteStatus("SUCESSO!!!!!"))
-    console.log(deleteStatus)
+    })
   }
 
   useEffect(() => {
@@ -76,12 +74,12 @@ export const CharsList = () => {
         ))}
       </div>
       <div>{apiresult.name}</div>
-      <div className="p-5 w-screen flex flex-wrap justify-center gap-2">
+      <div className="p-5 w-screen flex flex-wrap justify-center space-y-10">
         {apiresult.map(
           (item, index) =>
             item.fk_rank.rank == rank && (
               <div key={index} className="w-[80%]">
-                <button onClick={() => deleteHero(item.id_heroe)}>delete</button>
+                <button onClick={() => deleteHero(item.id_heroe)} className="bg-cyan-500 hover:bg-red-600 w-full rounded-t-xl font-bold uppercase text-lg text-white" >delete</button>
                 <CharCard
                   name={item.name}
                   photo={item.photo}
