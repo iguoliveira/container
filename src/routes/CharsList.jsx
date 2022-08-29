@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { CharCard } from "../components/card/CharCard";
 import { Navbar } from "../components/navbar/Navbar";
+import { Footer } from "../components/footer/Footer"
 import { useParams, useNavigate } from "react-router-dom";
 
 export const CharsList = () => {
@@ -71,7 +72,7 @@ export const CharsList = () => {
         {apiresult.map(
           (item, index) =>
             item.fk_rank.rank == rank && (
-              <div key={index} className="w-[45%]">
+              <div key={index} className="w-[80%]">
                 <CharCard
                   name={item.name}
                   photo={item.photo}
@@ -87,6 +88,7 @@ export const CharsList = () => {
             )
         )}
       </div>
+      <Footer />
     </>
   );
 };
