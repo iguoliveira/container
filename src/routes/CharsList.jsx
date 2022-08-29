@@ -12,6 +12,7 @@ export const CharsList = () => {
   const [apiresult, setApiresult] = useState([]);
   const [rankApi, setRankApi] = useState([]);
   const [helper, setHelper] = useState("");
+  const [deleteStatus, setDeleteStatus] = useState("nao deu");
 
   const fetchApi = () => {
     fetch("http://localhost:8000/heroes").then((res) =>
@@ -35,17 +36,18 @@ export const CharsList = () => {
     );
   };
 
-  const deleteHero = ({ index }) => {
-    fetch("http://localhost:8000/heroes"+index, {
+  const deleteHero = (index) => {
+    fetch("http://localhost:8000/heroes/" + index, {
       method: 'DELETE'
-    })
+    }).then(() => setDeleteStatus("SUCESSO!!!!!"))
+    console.log(deleteStatus)
   }
 
   useEffect(() => {
     fetchApi();
   }, []);
 
-  useEffect(() => {}, [helper]);
+  useEffect(() => { }, [helper]);
 
   return (
     <>
@@ -79,6 +81,7 @@ export const CharsList = () => {
           (item, index) =>
             item.fk_rank.rank == rank && (
               <div key={index} className="w-[80%]">
+                <button onClick={() => deleteHero(item.id_heroe)}>delete</button>
                 <CharCard
                   name={item.name}
                   photo={item.photo}
