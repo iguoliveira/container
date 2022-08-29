@@ -54,12 +54,15 @@ export const CharsList = () => {
               navigate("/charsList/" + item.rank + "-class/");
             }}
           >
-            <div
-              key={index}
-              className="bg-gray-700 px-4 py-2 rounded uppercase font-bold"
-            >
-              {item.rank}
-            </div>
+            {item.rank == rank ? (
+              <div className="bg-gray-500 shadow-black shadow-inner px-4 py-2 rounded uppercase font-bold">
+                {item.rank}
+              </div>
+            ) : (
+              <div className="bg-gray-700 px-4 py-2 rounded uppercase font-bold">
+                {item.rank}
+              </div>
+            )}
           </button>
         ))}
       </div>
