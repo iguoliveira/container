@@ -65,24 +65,23 @@ export const CharsList = () => {
       </div>
       <div>{apiresult.name}</div>
       <div className="p-5 w-screen flex flex-wrap justify-center gap-2">
-        {apiresult.map((item, index) =>
-          item.fk_rank.rank == rank ? (
-            <div key={index} className="w-[45%]">
-              <CharCard
-                name={item.name}
-                photo={item.photo}
-                heroe_name={item.heroe_name}
-                age={item.age}
-                rank={item.fk_rank.rank}
-                position={item.position}
-                gender={item.gender}
-                race={item.race}
-                status={item.status}
-              />
-            </div>
-          ) : (
-            console.log("")
-          )
+        {apiresult.map(
+          (item, index) =>
+            item.fk_rank.rank == rank && (
+              <div key={index} className="w-[45%]">
+                <CharCard
+                  name={item.name}
+                  photo={item.photo}
+                  heroe_name={item.heroe_name}
+                  age={item.age}
+                  rank={item.fk_rank.rank}
+                  position={item.position}
+                  gender={item.gender}
+                  race={item.race}
+                  status={item.status}
+                />
+              </div>
+            )
         )}
       </div>
     </>

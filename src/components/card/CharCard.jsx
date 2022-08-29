@@ -4,10 +4,27 @@ export const CharCard = (props) => {
       <div className="bg-black text-white w-full h-full rounded-t-xl p-5">
         <div className="text-center uppercase font-bold">{props.name}</div>
         <div className="flex justify-center">
-          <img
-            className="float-left w-40 h-40 object-cover rounded border-8 border-[#FFD700]"
-            src={props.photo}
-          />
+          {props.rank == "S" ? (
+            <img
+              className="float-left w-40 h-40 object-cover rounded border-8 border-[#FFD700]"
+              src={props.photo}
+            />
+          ) : props.rank == "A" ? (
+            <img
+              className="float-left w-40 h-40 object-cover rounded border-8 border-[#C0C0C0]"
+              src={props.photo}
+            />
+          ) : props.rank == "B" ? (
+            <img
+              className="float-left w-40 h-40 object-cover rounded border-8 border-[#B87333]"
+              src={props.photo}
+            />
+          ) : (
+            <img
+              className="float-left w-40 h-40 object-cover rounded border-8 border-[#4b4a4a]"
+              src={props.photo}
+            />
+          )}
         </div>
         <div className="mt-4 text-center -mb-4">
           <div>
@@ -26,7 +43,9 @@ export const CharCard = (props) => {
             ALIVE
           </div>
         ) : (
-          <div className="bg-red-500 text-center uppercase text-lg rounded-b-xl">DEAD</div>
+          <div className="bg-red-500 text-center uppercase text-lg rounded-b-xl">
+            DEAD
+          </div>
         )}
       </div>
     </div>
