@@ -6,22 +6,22 @@ export const CharCard = (props) => {
         <div className="flex justify-center">
           {props.rank == "S" ? (
             <img
-              className="float-left w-56 h-52 object-cover rounded border-8 border-[#FFD700]"
+              className="float-left w-56 h-52 object-cover rounded border-8 border-[#FFD700] shadow-lg shadow-black"
               src={props.photo}
             />
           ) : props.rank == "A" ? (
             <img
-              className="float-left w-56 h-52 object-cover rounded border-8 border-[#C0C0C0]"
+              className="float-left w-56 h-52 object-cover rounded border-8 border-[#C0C0C0] shadow-lg shadow-black"
               src={props.photo}
             />
           ) : props.rank == "B" ? (
             <img
-              className="float-left w-56 h-52 object-cover rounded border-8 border-[#B87333]"
+              className="float-left w-56 h-52 object-cover rounded border-8 border-[#B87333] shadow-lg shadow-black"
               src={props.photo}
             />
           ) : (
             <img
-              className="float-left w-56 h-52 object-cover rounded border-8 border-[#4b4a4a]"
+              className="float-left w-56 h-52 object-cover rounded border-8 border-[#4b4a4a] shadow-lg shadow-black"
               src={props.photo}
             />
           )}
@@ -38,7 +38,7 @@ export const CharCard = (props) => {
       </div>
       <div>
         {props.status ? (
-          <div className="bg-green-800 text-center uppercase text-lg rounded-b-xl">
+          <div className="bg-green-500 text-center uppercase text-lg rounded-b-xl">
             ALIVE
           </div>
         ) : (

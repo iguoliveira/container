@@ -35,6 +35,12 @@ export const CharsList = () => {
     );
   };
 
+  const deleteHero = ({ index }) => {
+    fetch("http://localhost:8000/heroes"+index, {
+      method: 'DELETE'
+    })
+  }
+
   useEffect(() => {
     fetchApi();
   }, []);
