@@ -1,44 +1,66 @@
 export const CharCard = (props) => {
+
   const deleteHero = (index) => {
     fetch("http://localhost:8000/heroes/" + index, {
       method: "DELETE",
     });
   };
 
+  const updateHero = (index) => {
+    fetch("http://localhost:8000/heroes/" + index, {
+      method: "PUT",
+    });
+  };
+
   return (
     <div>
-      <div className="bg-gray-800 text-white w-full h-full rounded-2xl shadow-lg shadow-black">
+      <div className="bg-gray-800 text-white w-full h-full rounded-2xl shadow-md shadow-gray-500">
         <div className="flex justify-center">
           {props.rank == "S" ? (
             <div>
               <img
-                className="float-left w-max h-52 object-cover rounded-t-xl"
+                className="float-left w-96 h-72 object-cover rounded-t-xl"
                 src={props.photo}
               />
               <div className="text-center uppercase font-bold bg-[#FFD700] text-black rounded-t-2xl">
-                {props.name}
+                {props.heroe_name}
               </div>
             </div>
           ) : props.rank == "A" ? (
-            <img
-              className="float-left w-56 h-52 object-cover rounded border-8 border-[#C0C0C0] shadow-lg shadow-black"
-              src={props.photo}
-            />
+            <div>
+              <img
+                className="float-left w-96 h-72 object-cover rounded-t-xl"
+                src={props.photo}
+              />
+              <div className="text-center uppercase font-bold bg-[#C0C0C0] text-black rounded-t-2xl">
+                {props.heroe_name}
+              </div>
+            </div>
           ) : props.rank == "B" ? (
-            <img
-              className="float-left w-56 h-52 object-cover rounded border-8 border-[#B87333] shadow-lg shadow-black"
-              src={props.photo}
-            />
+            <div>
+              <img
+                className="float-left w-96 h-72 object-cover rounded-t-xl"
+                src={props.photo}
+              />
+              <div className="text-center uppercase font-bold bg-[#B87333] text-black rounded-t-2xl">
+                {props.heroe_name}
+              </div>
+            </div>
           ) : (
+            <div>
             <img
-              className="float-left w-56 h-52 object-cover rounded border-8 border-[#4b4a4a] shadow-lg shadow-black"
+              className="float-left w-96 h-72 object-cover rounded-t-xl"
               src={props.photo}
             />
+            <div className="text-center uppercase font-bold bg-[#4b4a4a] rounded-t-2xl">
+              {props.heroe_name}
+            </div>
+          </div>
           )}
         </div>
         <div className="text-center py-3">
           <div>
-            AKA {props.heroe_name}, {props.age} y'o
+            {props.name}, {props.age} y'o
           </div>
           <div>
             {props.rank}-Class, Rank {props.position}
@@ -49,7 +71,14 @@ export const CharCard = (props) => {
             <div>{props.race}, Female</div>
           )}
         </div>
-        <div>
+        <div className="flex">
+          <button
+            onClick={() => updateHero(props.indexKey)}
+            className="bg-gray-800 hover:bg-blue-600 w-full font-bold uppercase text-lg text-white"
+          >
+            edit
+          </button>
+
           <button
             onClick={() => deleteHero(props.indexKey)}
             className="bg-gray-800 hover:bg-red-600 w-full font-bold uppercase text-lg text-white"
