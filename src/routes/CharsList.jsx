@@ -79,7 +79,7 @@ export const CharsList = () => {
           (item, index) =>
             item.fk_rank.rank == rank && (
               <div key={index} className="w-[80%]">
-                <button onClick={() => deleteHero(item.id_heroe)} className="bg-cyan-500 hover:bg-red-600 w-full rounded-t-xl font-bold uppercase text-lg text-white" >delete</button>
+                <button onClick={() => deleteHero(item.id_heroe)} className="bg-gray-800 hover:bg-red-600 w-full rounded-t-xl font-bold uppercase text-lg text-white" >delete</button>
                 <CharCard
                   name={item.name}
                   photo={item.photo}
