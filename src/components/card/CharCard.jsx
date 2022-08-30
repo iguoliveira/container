@@ -1,14 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 export const CharCard = (props) => {
+  let navigate = useNavigate();
 
   const deleteHero = (index) => {
     fetch("http://localhost:8000/heroes/" + index, {
       method: "DELETE",
-    });
-  };
-
-  const updateHero = (index) => {
-    fetch("http://localhost:8000/heroes/" + index, {
-      method: "PUT",
     });
   };
 
@@ -48,14 +45,14 @@ export const CharCard = (props) => {
             </div>
           ) : (
             <div>
-            <img
-              className="float-left w-96 h-72 object-cover rounded-t-xl"
-              src={props.photo}
-            />
-            <div className="text-center uppercase font-bold bg-[#4b4a4a] rounded-t-2xl">
-              {props.heroe_name}
+              <img
+                className="float-left w-96 h-72 object-cover rounded-t-xl"
+                src={props.photo}
+              />
+              <div className="text-center uppercase font-bold bg-[#4b4a4a] rounded-t-2xl">
+                {props.heroe_name}
+              </div>
             </div>
-          </div>
           )}
         </div>
         <div className="text-center py-3">
@@ -73,7 +70,7 @@ export const CharCard = (props) => {
         </div>
         <div className="flex">
           <button
-            onClick={() => updateHero(props.indexKey)}
+            onClick={() => navigate("/charsList/S-class/" + props.indexKey + "/edit")}
             className="bg-gray-800 hover:bg-blue-600 w-full font-bold uppercase text-lg text-white"
           >
             edit
