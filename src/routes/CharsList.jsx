@@ -35,12 +35,6 @@ export const CharsList = () => {
     );
   };
 
-  const deleteHero = (index) => {
-    fetch("http://localhost:8000/heroes/" + index, {
-      method: 'DELETE'
-    })
-  }
-
   useEffect(() => {
     fetchApi();
   }, []);
@@ -79,8 +73,8 @@ export const CharsList = () => {
           (item, index) =>
             item.fk_rank.rank == rank && (
               <div key={index} className="w-[80%]">
-                <button onClick={() => deleteHero(item.id_heroe)} className="bg-gray-800 hover:bg-red-600 w-full rounded-t-xl font-bold uppercase text-lg text-white" >delete</button>
                 <CharCard
+                  indexKey={item.id_heroe}
                   name={item.name}
                   photo={item.photo}
                   heroe_name={item.heroe_name}
