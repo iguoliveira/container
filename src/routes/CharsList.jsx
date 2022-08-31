@@ -35,15 +35,10 @@ export const CharsList = () => {
     );
   };
 
-  const refresh = () => {
-    window.location.reload();
-    fetchApi();
-  };
-
   const deleteHero = (index) => {
     fetch("http://localhost:8000/heroes/" + index, {
       method: "DELETE",
-    }).then(refresh);
+    }).then(fetchApi);
   };
 
   useEffect(() => {
