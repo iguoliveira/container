@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { CharCard } from "../components/card/CharCard";
 import { Navbar } from "../components/navbar/Navbar";
-import { Footer } from "../components/footer/Footer"
+import { Footer } from "../components/footer/Footer";
 import { useParams, useNavigate } from "react-router-dom";
 
 export const CharsList = () => {
@@ -39,7 +39,7 @@ export const CharsList = () => {
     fetchApi();
   }, []);
 
-  useEffect(() => { }, [helper]);
+  useEffect(() => {}, [helper]);
 
   return (
     <>
@@ -68,11 +68,11 @@ export const CharsList = () => {
         ))}
       </div>
       <div>{apiresult.name}</div>
-      <div className="p-5 w-screen flex flex-wrap justify-center space-y-10">
+      <div className="p-5 w-screen flex flex-wrap justify-center gap-20">
         {apiresult.map(
           (item, index) =>
             item.fk_rank.rank == rank && (
-              <div key={index} className="w-[80%]">
+              <div key={index}>
                 <CharCard
                   indexKey={item.id_heroe}
                   name={item.name}
