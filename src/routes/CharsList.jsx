@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { CharCard } from "../components/card/CharCard";
 import { Navbar } from "../components/navbar/Navbar";
 import { Footer } from "../components/footer/Footer";
 import { useParams, useNavigate } from "react-router-dom";
+import { CharCard } from "../components/card/CharCard";
 
 export const CharsList = () => {
   let navigate = useNavigate();
@@ -33,6 +33,17 @@ export const CharsList = () => {
         setRankApi(data);
       })
     );
+  };
+
+  const refresh = () => {
+    window.location.reload();
+    fetchApi();
+  };
+
+  const deleteHero = (index) => {
+    fetch("http://localhost:8000/heroes/" + index, {
+      method: "DELETE",
+    }).then(refresh);
   };
 
   useEffect(() => {
@@ -84,6 +95,7 @@ export const CharsList = () => {
                   gender={item.gender}
                   race={item.race}
                   status={item.status}
+                  action={deleteHero}
                 />
               </div>
             )
