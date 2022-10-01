@@ -3,12 +3,6 @@ import { useNavigate } from "react-router-dom";
 export const CharCard = (props) => {
   let navigate = useNavigate();
 
-  const deleteHero = (index) => {
-    fetch("http://localhost:8000/heroes/" + index, {
-      method: "DELETE",
-    });
-  };
-
   return (
     <div>
       <div className="bg-gray-800 text-white w-full h-full rounded-2xl shadow-md shadow-gray-500">
@@ -70,14 +64,16 @@ export const CharCard = (props) => {
         </div>
         <div className="flex">
           <button
-            onClick={() => navigate("/charsList/S-class/" + props.indexKey + "/edit")}
+            onClick={() =>
+              navigate("/charsList/S-class/" + props.indexKey + "/edit")
+            }
             className="bg-gray-800 hover:bg-blue-600 w-full font-bold uppercase text-lg text-white"
           >
             edit
           </button>
 
           <button
-            onClick={() => deleteHero(props.indexKey)}
+            onClick={() => props.action(props.indexKey)}
             className="bg-gray-800 hover:bg-red-600 w-full font-bold uppercase text-lg text-white"
           >
             delete

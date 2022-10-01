@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { CharCard } from "../components/card/CharCard";
 import { Navbar } from "../components/navbar/Navbar";
-import { Footer } from "../components/footer/Footer"
+import { Footer } from "../components/footer/Footer";
 import { useParams, useNavigate } from "react-router-dom";
+import { CharCard } from "../components/card/CharCard";
 
 export const CharsList = () => {
   let navigate = useNavigate();
@@ -35,11 +35,17 @@ export const CharsList = () => {
     );
   };
 
+  const deleteHero = (index) => {
+    fetch("http://localhost:8000/heroes/" + index, {
+      method: "DELETE",
+    }).then(fetchApi);
+  };
+
   useEffect(() => {
     fetchApi();
   }, []);
 
-  useEffect(() => { }, [helper]);
+  useEffect(() => {}, [helper]);
 
   return (
     <>
@@ -68,11 +74,11 @@ export const CharsList = () => {
         ))}
       </div>
       <div>{apiresult.name}</div>
-      <div className="p-5 w-screen flex flex-wrap justify-center space-y-10">
+      <div className="p-5 w-screen flex flex-wrap justify-center gap-20">
         {apiresult.map(
           (item, index) =>
             item.fk_rank.rank == rank && (
-              <div key={index} className="w-[80%]">
+              <div key={index}>
                 <CharCard
                   indexKey={item.id_heroe}
                   name={item.name}
@@ -84,6 +90,7 @@ export const CharsList = () => {
                   gender={item.gender}
                   race={item.race}
                   status={item.status}
+                  action={deleteHero}
                 />
               </div>
             )
