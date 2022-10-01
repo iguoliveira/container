@@ -13,8 +13,8 @@ export const Navbar = () => {
         <Hamburguer />
         <div className='DESKTOP-MENU hidden space-x-8 lg:flex'>
           <Link to="/"><Links name="Homepage" /></Link>
-          <Link to="/tierList/"><Links name="Tier List" /></Link>
           <Link to="/charsList/"><Links name="Chars List" /></Link>
+          <Link to="/tierList/"><Links name="Tier List" /></Link>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
-## Welcome to One Punch Man Wiki!
+# Frontend of One Punch Man WIKI
+Frontend made with React of OPM Wiki.
 
-A wiki made for a class exercise, made with React and Django.
+## API Hero
+API OPM Heroes made with Django Rest Framework.
