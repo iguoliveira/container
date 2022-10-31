@@ -1,37 +1,68 @@
-import './app.scss'
-import { useState } from "react";
-import { useMutation, useQuery, useQueryClient } from 'react-query';
-import { fetchProduct, postProduct } from './fetchers/products'
+import "./app.scss";
+import { useState, useEffect } from "react";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import {
+  fetchProduct,
+  postProduct,
+  udpateProduct,
+  deleteProduct,
+} from "./fetchers/products";
+import { useLoaderData } from "react-router-dom";
 
 export const App = () => {
-  document.title = 'Products'
-  const client = useQueryClient()
-  const { data, isLoading, error } = useQuery(
-    ['product'],
-    fetchProduct
-  )
+  document.title = "Products";
+  const client = useQueryClient();
+  const params = useLoaderData();
+  const { data, isLoading, error } = useQuery(["product"], fetchProduct);
 
   const mutation = useMutation(postProduct, {
     onSuccess: () => {
-      client.invalidateQueries('product')
-    }
-  })
+      client.invalidateQueries("product");
+    },
+  });
+
+  const mutationEdit = useMutation(udpateProduct, {
+    onSuccess: () => {
+      client.invalidateQueries("product");
+    },
+  });
+
+  const mutationDelete = useMutation(deleteProduct, {
+    onSuccess: () => {
+      client.invalidateQueries("product");
+    },
+  });
+
   const [inputs, setInputs] = useState({
-    name: '',
+    name: "",
     qtd: 0,
-    price: 0
+    price: 0,
   });
 
   function handleInput() {
     setInputs({
       ...inputs,
-      [event.target.name]: event.target.value
-    })
+      [event.target.name]: event.target.value,
+    });
   }
 
   function handleSubmit() {
-    event.preventDefault()
-    mutation.mutate(inputs)
+    event.preventDefault();
+    mutation.mutate(inputs);
+  }
+
+  function handleEdit() {
+    const editData = {
+      id: event.target.parentNode.id,
+      ...inputs,
+    };
+    console.log(editData);
+    mutationEdit.mutate(editData);
+  }
+
+  function handleDelete(event) {
+    mutationDelete.mutate({ id: event.target.parentNode.id });
+    // console.log(event.target.parentNode.id);
   }
 
   if (isLoading) {
@@ -44,19 +75,57 @@ export const App = () => {
 
   return (
     <section>
-      <form>
-        <input type="text" name="name" className="input" placehoder='Nome' value={inputs.name} onChange={handleInput} />
-        <input type="number" name="qtd" className="input" placehoder='Quantidade' value={inputs.qtd} onChange={handleInput} />
-        <input type="number" name="price" className="input" placehoder='Price' value={inputs.price} onChange={handleInput} />
-        <button type="submit" className="button" onClick={handleSubmit}>Cadastrar</button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          className="input"
+          placehoder="Nome"
+          value={inputs.name}
+          onChange={handleInput}
+        />
+        <input
+          type="number"
+          name="qtd"
+          className="input"
+          placehoder="Quantidade"
+          value={inputs.qtd}
+          onChange={handleInput}
+        />
+        <input
+          type="number"
+          name="price"
+          className="input"
+          placehoder="Price"
+          value={inputs.price}
+          onChange={handleInput}
+        />
+        <button type="submit" className="button">
+          Cadastrar
+        </button>
       </form>
       <div className="items-container">
         {data.map((item, index) => {
           return (
-            <div key={index}>{item.name} - {item.qtd} - R${item.price}</div>
-          )
+            <div key={index} className="product-card">
+              <span>
+                {item.name} - {item.qtd} - R${item.price}
+              </span>
+              <div id={item.id}>
+                <button
+                  className="button-delete"
+                  onClick={(evt) => handleDelete(evt)}
+                >
+                  DELETAR
+                </button>
+                <button className="button-edit" onClick={() => handleEdit()}>
+                  EDITAR
+                </button>
+              </div>
+            </div>
+          );
         })}
       </div>
     </section>
-  )
-}
+  );
+};

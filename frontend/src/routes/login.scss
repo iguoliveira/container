@@ -1,0 +1,30 @@
+.error {
+  border: 1px solid red !important;
+}
+
+input {
+  background-color: white;
+  padding: 0.5rem;
+  border: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: rgb(236, 236, 236);
+  }
+}
+
+button {
+  background-color: white;
+  border: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: rgb(236, 236, 236);
+  }
+}

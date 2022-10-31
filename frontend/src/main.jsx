@@ -1,13 +1,34 @@
-import './index.css'
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { App } from './App'
+import "./index.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { App } from "./App";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Login } from "./routes/Login";
+import { Order } from "./routes/Order";
 
-const queryClient = new QueryClient()
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/order",
+    element: <Order />,
+  },
+  {
+    path: "/:id/products",
+    element: <App />,
+    loader: async ({ params }) => {
+      return params.id;
+    },
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
-    <App />
+    <RouterProvider router={router} />
   </QueryClientProvider>
-)
+);
