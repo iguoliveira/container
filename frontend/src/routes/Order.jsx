@@ -12,6 +12,7 @@ export const Order = () => {
   const [inputs, setInputs] = useState({
     name: "",
     totalPrice: 0,
+    productId: [],
   });
   const mutation = useMutation(postOrder, {
     onSuccess: () => {
@@ -56,7 +57,7 @@ export const Order = () => {
         <input
           type="text"
           name="name"
-          placeholder="Name"
+          placeholder="Order Name"
           value={inputs.name}
           onChange={handleInput}
           autoFocus

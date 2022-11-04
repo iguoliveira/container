@@ -15,6 +15,11 @@ export const fetchOrder = async () => {
   return await res.json();
 };
 
+export const findAllProductsInOrder = async (data) => {
+  const res = await fetch(`${URL}/order/id:${data}/products-list`);
+  return await res.json();
+};
+
 export const postOrder = async (data) => {
   const res = await fetch(`${URL}/insert-order`, {
     method: "POST",

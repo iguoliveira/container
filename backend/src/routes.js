@@ -30,6 +30,19 @@ controller.get("/orders-list", async (req, res) => {
   });
 });
 
+controller.get("/order/id::id/products-list", async (req, res) => {
+  db.serialize(() => {
+    db.all(
+      `SELECT * FROM Product AS p INNER JOIN ProductOrder AS o ON o.id = p.orderId WHERE o.id = ?`,
+      [req.params.id],
+      (error, rows) => {
+        if (error) return res.status(500).json({ error, msg: error.message });
+        res.json({ params: req.params, products: rows });
+      }
+    );
+  });
+});
+
 controller.post("/insert-order", async (req, res) => {
   const { name, totalPrice } = req.body;
   db.serialize(() => {
@@ -69,6 +82,17 @@ controller.patch("/update-product", async (req, res) => {
       qtd,
       price,
       id,
+    ]);
+  });
+});
+
+controller.patch("/update-order", async (req, res) => {
+  const { id, totalPrice } = req.body;
+
+  db.serialize(() => {
+    db.run("UPDATE ProductOrder SET totalPrice = ? WHERE id = ?", [
+      id,
+      totalPrice,
     ]);
   });
 });

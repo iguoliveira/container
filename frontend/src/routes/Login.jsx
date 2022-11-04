@@ -46,7 +46,7 @@ export const Login = () => {
         />
         <input
           className={error && "error"}
-          type="text"
+          type="password"
           name="password"
           placeholder="Password"
           value={inputs.password}

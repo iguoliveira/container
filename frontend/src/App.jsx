@@ -2,7 +2,7 @@ import "./app.scss";
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import {
-  fetchProduct,
+  findAllProductsInOrder,
   postProduct,
   udpateProduct,
   deleteProduct,
@@ -13,23 +13,25 @@ export const App = () => {
   document.title = "Products";
   const client = useQueryClient();
   const params = useLoaderData();
-  const { data, isLoading, error } = useQuery(["product"], fetchProduct);
+  const { data, isLoading, error } = useQuery(["order-product"], () =>
+    findAllProductsInOrder(params)
+  );
 
   const mutation = useMutation(postProduct, {
     onSuccess: () => {
-      client.invalidateQueries("product");
+      client.invalidateQueries("order-product");
     },
   });
 
   const mutationEdit = useMutation(udpateProduct, {
     onSuccess: () => {
-      client.invalidateQueries("product");
+      client.invalidateQueries("order-product");
     },
   });
 
   const mutationDelete = useMutation(deleteProduct, {
     onSuccess: () => {
-      client.invalidateQueries("product");
+      client.invalidateQueries("order-product");
     },
   });
 
@@ -37,6 +39,7 @@ export const App = () => {
     name: "",
     qtd: 0,
     price: 0,
+    orderId: params,
   });
 
   function handleInput() {
@@ -61,7 +64,6 @@ export const App = () => {
 
   function handleDelete(event) {
     mutationDelete.mutate({ id: event.target.parentNode.id });
-    // console.log(event.target.parentNode.id);
   }
 
   if (isLoading) {
@@ -104,7 +106,7 @@ export const App = () => {
         </button>
       </form>
       <div className="items-container">
-        {data.map((item, index) => {
+        {data.products.map((item, index) => {
           return (
             <div key={index} className="product-card">
               <span>
