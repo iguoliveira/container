@@ -1,5 +1,5 @@
 import "./app.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import {
   fetchProduct,
@@ -56,7 +56,6 @@ export const App = () => {
       id: event.target.parentNode.id,
       ...inputs,
     };
-    console.log(editData);
     mutationEdit.mutate(editData);
   }
 

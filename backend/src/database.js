@@ -5,7 +5,7 @@ const db = new sqlite3.Database("database.sqlite3");
 export const createOrderTable = async () => {
   db.serialize(() => {
     db.exec(
-      `CREATE TABLE IF NOT EXISTS ProductOrder (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, totalPrice NUMERIC)`
+      `CREATE TABLE IF NOT EXISTS ProductOrder (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, totalPrice NUMERIC, productId INTEGER, FOREIGN KEY (productId) REFERENCES Product(id))`
     );
   });
 };
@@ -21,7 +21,7 @@ export const createUserTable = async () => {
 export const createProductTable = async () => {
   db.serialize(() => {
     db.exec(
-      `CREATE TABLE IF NOT EXISTS Product (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, qtd INTEGER, price NUMERIC, orderId INTEGER, FOREIGN KEY (orderId) REFERENCES ProductOrder(id))`
+      `CREATE TABLE IF NOT EXISTS Product (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, qtd INTEGER, price NUMERIC)`
     );
   });
 };

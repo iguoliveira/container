@@ -1,0 +1,32 @@
+.order-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: black;
+  width: 75%;
+  flex-wrap: wrap;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.order-card {
+  background-color: rgb(36, 71, 185);
+  padding: 1rem;
+  color: white;
+  text-transform: uppercase;
+  border: 10px solid whitesmoke;
+  border-radius: 0.5rem;
+  text-align: center;
+
+  button {
+    background-color: red;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bolder;
+
+    &:hover {
+      background-color: rgb(183, 87, 87);
+    }
+  }
+}

@@ -64,7 +64,7 @@ controller.patch("/update-product", async (req, res) => {
   const { id, name, qtd, price } = req.body;
 
   db.serialize(() => {
-    db.run("UPDATE Product SET name = ?, qtd = ?, price = ? WHERE id = ?)", [
+    db.run("UPDATE Product SET name = ?, qtd = ?, price = ? WHERE id = ?", [
       name,
       qtd,
       price,
@@ -78,6 +78,14 @@ controller.delete("/delete-product", async (req, res) => {
 
   db.serialize(() => {
     db.run("DELETE FROM Product WHERE id = ?", [id]);
+  });
+});
+
+controller.delete("/delete-order", async (req, res) => {
+  const { id } = req.body;
+
+  db.serialize(() => {
+    db.run("DELETE FROM ProductOrder WHERE id = ?", [id]);
   });
 });
 
