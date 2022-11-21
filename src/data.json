@@ -2,7 +2,7 @@
     {
         "name":"PS/QMM",
         "number": "10",
-        "cars": []
+        "cars": [{}]
     },
     {
         "name":"CAP/ETS",
@@ -21,6 +21,6 @@
     {
         "name":"AA",
         "number": "2",
-        "cars": []
+        "cars": [{}]
     }
 ]

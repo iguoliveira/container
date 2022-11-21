@@ -4,11 +4,25 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
-  border-bottom: 1px solid black;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     opacity: 0.9;
     color: rgb(0, 35, 106);
+  }
+
+  & > button {
+    background-color: black;
+    border: 0;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 }
