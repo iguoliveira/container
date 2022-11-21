@@ -1,0 +1,14 @@
+.card-area-content {
+  display: flex;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+    color: rgb(0, 35, 106);
+  }
+}
