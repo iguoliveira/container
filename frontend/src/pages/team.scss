@@ -1,0 +1,36 @@
+@import '../variables.scss';
+
+.team-profile-content {
+    background-color: $dark-background;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    &>.team-data {
+        background-color: white;
+        padding: 1rem;
+        border-radius: $rounded;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &>div>.title {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        &>div>.data {
+            font-size: 2rem;
+        }
+    }
+
+    & > .back{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+}
