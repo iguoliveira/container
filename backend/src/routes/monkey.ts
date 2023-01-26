@@ -1,13 +1,12 @@
-import { TRPCError } from '@trpc/server'
-import { router } from '../server'
-import { t } from '../server'
+import { router, publicProcedure } from '../server'
 import { prisma } from '../utils/script'
+import { TRPCError } from '@trpc/server'
 
 export const monkeyRouter = router({
-    getAllMonkeys: t.procedure.query(async () => {
+    getAllMonkeys: publicProcedure.query(async () => {
         try {
             const allMonkeys = await prisma.monkey.findMany()
-            return allMonkeys
+            return { allMonkeys }
 
         } catch (error) {
             throw new TRPCError({

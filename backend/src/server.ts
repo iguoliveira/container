@@ -1,7 +1,6 @@
 import { initTRPC } from '@trpc/server';
-import * as trpcExpress from '@trpc/server/adapters/express';
 import superjson from 'superjson';
-import { app } from './index'
+import { monkeyRouter } from './routes/monkey';
 
 export const t = initTRPC.create({
     transformer: superjson,
@@ -11,15 +10,10 @@ export const t = initTRPC.create({
 });
 
 export const router = t.router;
-const publicProcedure = t.procedure;
+export const publicProcedure = t.procedure;
 
-const appRouter = router({});
-
-app.use(
-    '/trpc',
-    trpcExpress.createExpressMiddleware({
-        router: appRouter,
-    }),
-);
+export const appRouter = router({
+    monkey: monkeyRouter
+});
 
 export type AppRouter = typeof appRouter;
