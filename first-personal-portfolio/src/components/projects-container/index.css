@@ -1,0 +1,51 @@
+.contents-container{
+    background-color: #d90368;
+    border-radius: 5px;
+}
+
+.initial-info{
+    display: flex;
+    gap: 1vw;
+    padding: 0 0 0.5vw 0;
+    border-bottom: 2px solid whitesmoke;
+}
+
+.gh-info{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    position: relative;
+}
+
+.info-avatar{
+    max-height: 15vw;
+    border-bottom-right-radius: 5px;
+}
+
+.name-info{
+    color: whitesmoke;
+    background-color: #333;
+    border-bottom-right-radius: 4px;
+    font-size: 1vw;
+    padding: 4px 0;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.text-info{
+    color: whitesmoke;
+    font-size: 1.2vw;
+}
+
+.main-title{
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+.projects-list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

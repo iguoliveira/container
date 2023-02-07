@@ -1,0 +1,42 @@
+.rep{
+    padding: 1vw;
+}
+.reps-name{
+    background-image: linear-gradient(90deg, #333, #333);
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 500ms ease;
+    padding-bottom: 2px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.25vw;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.reps-name:hover{
+    background-size: 100% 2px;
+}
+
+.dropdown-content {
+    display: none;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.2) inset;
+    z-index: 1;
+    width: 50%;
+}
+
+.dropdown-content div {
+    color: whitesmoke;
+    display: block;
+    font-size: 1vw;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.show {
+    display: block;
+}
