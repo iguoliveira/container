@@ -1,0 +1,26 @@
+[
+    {
+        "name":"PS/QMM",
+        "number": "10",
+        "cars": [{}]
+    },
+    {
+        "name":"CAP/ETS",
+        "number": "6",
+        "cars": [
+            {
+                "model":"Model Y",
+                "price":25.000
+            },
+            {
+                "model":"Model S",
+                "price":50.000
+            }
+        ]
+    },
+    {
+        "name":"AA",
+        "number": "2",
+        "cars": [{}]
+    }
+]

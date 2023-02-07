@@ -1,0 +1,42 @@
+@import "../variables.scss";
+
+.navbar-content {
+  background-color: $main-1000;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 999;
+
+  & > .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  & > .links {
+    display: flex;
+    gap: 1rem;
+
+    & > a {
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 1.2rem;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

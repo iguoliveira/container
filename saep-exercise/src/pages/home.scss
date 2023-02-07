@@ -1,0 +1,25 @@
+@import "../variables.scss";
+
+.home-content {
+  background-color: $dark-background;
+  height: 100vh;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > a {
+    background-color: white;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: $rounded;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
