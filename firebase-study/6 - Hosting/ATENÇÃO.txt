@@ -1,0 +1,1 @@
+Iremos utilizar o código da seção de Realtime ou Firestore, qual das duas usar fica a seu critério.

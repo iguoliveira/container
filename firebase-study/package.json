@@ -1,0 +1,14 @@
+{
+  "name": "curso-firebase-web",
+  "version": "1.0.0",
+  "description": "Pacote contendo apenas o firebase para expor o metodos e conseguirmos visualizar de forma mais fácil durante o desenvolvimento",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Barreto",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^5.5.9"
+  }
+}
