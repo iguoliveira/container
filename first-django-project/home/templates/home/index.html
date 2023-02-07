@@ -1,0 +1,27 @@
+{% load static %}
+{% include 'header.html' %}
+  <body>
+    {% include 'navbar.html' %}
+
+    <section>
+      <div>
+        {% if user.is_authenticated %}
+        <div>Ola {{user.get_username}}</div>
+        {% else %}
+        <div>login</div>
+        {% endif %}
+      </div>
+      <div class="courses-container">
+        <div class="courses-header">Courses</div>
+        <div class="courses-list">
+          {% for c in curso %}
+          <div>
+            <a href="{% url 'detalhes' c.id %}">{{c.id}}. </a>{{c.nome}} -
+            {{c.preco}}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
