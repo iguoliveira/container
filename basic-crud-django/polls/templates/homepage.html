@@ -1,0 +1,24 @@
+  {% load static %}
+  {% include 'header.html' %}
+  <body>
+    {% include 'navbar.html' %}
+    <content class="container">
+      <div class="crud-container">
+        <div class="header-container">CRUD</div>
+        
+        <form class="inputs-list-container" method="POST" action="{% url 'salvar_poli' %}">
+          {% csrf_token %}
+          <input type="text" class="input-container" placeholder="Name" name="name" />
+          <input type="number" class="input-container" placeholder="Age" name="age" />
+          <input type="text" class="input-container" placeholder="Sex" name="sex" />
+          <input type="file" name="image"/>
+          <div class="buttons-area">
+            <button type="submit" class="button-container">Submit</button>
+            <a href="list/" class="a-container">List</a>
+          </div>
+        </form>
+       
+      </div>
+    </content>
+  </body>
+</html>

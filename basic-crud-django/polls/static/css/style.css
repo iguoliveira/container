@@ -1,0 +1,115 @@
+:root{
+    --gray: rgb(235, 235, 235);
+    --ioColor: rgb(0, 102, 255);
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--gray);
+    font-size: 1.2em;
+    padding: 20px;
+}
+
+.navbar-logo {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-logo:hover{
+    color: rgb(82, 82, 82);
+}
+
+.navbar-items {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-items a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-items a:hover {
+    color: rgb(82, 82, 82);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crud-container {
+    text-align: center;
+    background-color: var(--gray);
+    padding: 20px;
+    border-radius: 5px;
+    width: 20%;
+}
+
+.header-container {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.inputs-list-container {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    width: 50%;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    font-size: 1em;
+}
+
+.input-container:focus {
+    outline: none;
+    border-bottom: 1px solid var(--ioColor);
+}
+
+.button-container{
+    margin-top: 20px;
+    border: 0;
+    background-color: var(--ioColor);
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.a-container{
+    text-decoration: none;
+    margin-top: 20px;
+    border: 0;
+    background-color: var(--ioColor);
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button-container:hover {
+    background-color: rgb(4, 92, 225);
+}
+
+.a-container:hover{
+    background-color: rgb(4, 92, 225);
+}
+
+.button-container:active {
+    box-shadow: inset 0 0 1em black;
+}
