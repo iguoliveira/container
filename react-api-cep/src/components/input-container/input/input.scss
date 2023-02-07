@@ -1,0 +1,56 @@
+:root {
+  --color-light: white;
+  --color-dark: #212121;
+  --color-signal: #744eaa;
+  
+  --color-background: var(--color-light);
+  --color-accent: var(--color-signal);
+  
+  --size-bezel: .5rem;
+  --size-radius: 4px;  
+}
+
+.input {
+  position: relative;
+  
+  &__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+    background: pink;
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: var(--color-background);
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
+    cursor: pointer;
+
+  }
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    border: 2px solid currentColor;
+    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+    color: currentColor;
+    background: transparent;
+    border-radius: var(--size-radius);
+    cursor: pointer;
+
+    &:hover{
+      border: 2px solid var(--color-accent);
+    }
+    
+    &:focus,
+    &:not(:placeholder-shown) {
+      outline: none;
+      & + .input__label {
+        transform: translate(.25rem, -65%) scale(.8);
+        color: var(--color-accent);
+      }
+    }
+  }
+}
