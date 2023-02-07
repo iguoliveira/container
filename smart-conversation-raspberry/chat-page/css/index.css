@@ -1,0 +1,151 @@
+body{
+    background-color: #151B25;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.msgText{
+    border: 0;
+    border-bottom: 2px solid #192E41;
+    background-color: transparent;
+    color: white;
+    width: 25%;
+}
+
+.msgText:hover{
+    border-bottom: 2px solid #112333;
+    outline: none;
+    transition: 0.25s;
+}
+
+.btnSend{
+    width: 4%;
+    background-color: #151B25;
+    border: 0;
+    padding: 4px;
+    color: whitesmoke;
+    border-radius: 2.5px;
+    cursor: pointer;
+}
+
+.btnSend:hover{
+    background-color: #112333;
+    transition: 0.35s;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: #4C5270;
+    padding: 20px 80px 20px 80px;
+    width: 60%;
+    overflow-y: auto;
+    height: 65vh;
+}
+
+.msg{
+    background-color: #82B9E9;
+    width: 30%;
+    padding: 10px;
+    margin-top: 1vh;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 0px black;
+}
+
+.userMsg-container{
+    display: flex;
+    justify-content: right;
+    width: 100%;
+}
+
+.divName{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.5vh;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 0.5vh;
+}
+
+.divTime{
+    display: flex;
+    justify-content: end;
+    font-size: 0.65em;
+    padding-left: 0.2em;
+    color: lightslategray;
+}
+
+.btnDelete{
+    border: 0;
+    background-color: transparent;
+    color: #52688F;
+    font-size: 0.7em;
+}
+
+.btnDelete:hover{
+    background-color: #E4021B;
+    color: white;
+    padding: 0.35vh;
+    cursor: pointer;
+    border-radius: 2.5px;
+    transition: 0.25s;
+}
+
+.chatHeader{
+    display: flex;
+    align-items: center;
+    gap: 0.5vh;
+    background-color: #52688F;
+    margin-top: 20px;
+    padding: 20px 80px 20px 80px;
+    width: 60%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.text-icon{
+    font-size: 4vh;
+    color: whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.icon-header{
+    margin-top: 1vh;
+    display: flex;
+    cursor: pointer;
+}
+
+.chatFooter{
+    display: flex;
+    justify-content: space-around;
+    background-color: #52688F;
+    width: 60%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 20px 80px 20px 80px;
+}
+
+.name{
+    border: 2px solid #192E41;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 4px;
+}
+
+.name:hover{
+    border: 0.35vh solid #112333;
+    outline: none;
+    transition: 0.25s;
+}
+
+.msg-container{
+    width: 100%;
+}

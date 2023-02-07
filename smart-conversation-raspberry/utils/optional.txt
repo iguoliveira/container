@@ -1,0 +1,36 @@
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js"; 
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyB4W9PiMVp2qjlcwimtK7155hk2Lh1l6Rw",
+        authDomain: "smart-conversation-524.firebaseapp.com",
+        databaseURL: "https://smart-conversation-524-default-rtdb.firebaseio.com",
+        projectId: "smart-conversation-524",
+        storageBucket: "smart-conversation-524.appspot.com",
+        messagingSenderId: "645453791274",
+        appId: "1:645453791274:web:b9d70cc3d1e08f6fc68353"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+
+
+    function createDataStructure(fname, lname, email, edv, password){
+        var data = {
+            name: fname + " " + lname,
+            email: email,
+            edv: edv,
+            password: password,
+        }
+        saveInDatabase(data)
+    }
+
+    function saveInDatabase(data){
+        event.preventDefault()
+        alert("REGISTER WAS SUCESSUFUL")
+        setDoc(doc(db,"login","users"),data)
+
+    }
+</script>

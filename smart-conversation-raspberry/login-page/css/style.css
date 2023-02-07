@@ -1,0 +1,93 @@
+body{
+    background-color: #1B1F27;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+*:focus{
+    outline: none;
+}
+
+.area-login{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-elements{
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #181920;
+    width: 40%;
+    height: 50vh;
+    border-radius: 15px;
+}
+
+.area-login form{
+    width: 400px;
+}
+
+.area-login img{
+    width: 110px;
+    height: auto;
+}
+
+.input-area{
+    width: 100%;
+    padding: 10px;
+}
+
+.input-field{
+    margin-top: 10px;
+    background-color: #252a34;
+    padding: 10px;
+    font-size: 2.5vh;
+    border: 0;
+    color: white;
+    width: calc(100% - 20px);
+    border-radius: 8px;
+}
+
+.input-field:hover{
+    background-color: #2d3441;
+}
+.input-field:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 30px #252a34 inset;
+}
+.input-button{
+    margin-top: 10px;
+    background-color: #52688F;
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    color: white;
+    font-size: 2.5vh;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.input-button:hover{
+    background-color: #294576;
+    transition: 0.5s;
+}
+
+.text-createAcc{
+    font-size: 2vh;
+    color: white;
+}
+
+.text-createAcc a{
+    text-decoration: underline;
+    color: whitesmoke;
+}
+
+.text-createAcc a:hover{
+    color: rgb(210, 209, 209);
+    font-size: 2.25vh;
+    transition: 0.5s;
+}
