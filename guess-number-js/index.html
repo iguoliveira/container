@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Imersao Alura - Aula 3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Guess the Number!</h1>
+    </header>
+    <section>
+        <div class="numGuess">
+            <form>
+                <div><p>A number between 1 and 10 had been generated, try to guess it in 3 turns or fewer.</p></div>
+                <label for="guessNum">Your Guess:</label>
+                <input type="number" name="guessNum" id="guessNum" placeholder="Guess the Number">
+                <div><button id="guessBtn">Guess</button></div>
+                <div id="problemParag">
+                    <p id="userGuesses"></p>
+                    <p id="lastResult"></p>
+                    <p id="tip"></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
